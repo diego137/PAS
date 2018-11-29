@@ -5,6 +5,12 @@
 		font-family: 'Varela Round', sans-serif;
 		font-size: 13px;
 	}
+	#txtBusqueda{
+	margin: 10px
+	 color: black;   
+	 
+	}
+	
 	.table-wrapper {
         background: #fff;
         padding: 20px 25px;

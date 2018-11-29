@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UserManagement</title>
+<title>Administrador</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,13 +19,23 @@
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-6">
-						<h2>Manage <b>Users</b></h2>
+                    <div class="col-sm-4">
+						<h2>Manage <b>Employees</b></h2>
 					</div>
-					<div class="col-sm-6">
+					
+					<form class= "form-inline">
+					<div class="form-group col-sm-4">
+					
+					    <label for="txtBusquedas"> Buscar:</label>
+					    <input id="txtBusqueda" type="text" class="form-control" placeholder="Search by Id" name="txtBusqueda"  >
+					    <input type="button" name="btnBuscar" class="btn btn-info" value="Buscar">
+					
+					</div>
+					<div class="form-group col-sm-4" >
 						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
 						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
 					</div>
+					</form>
                 </div>
             </div>
             <table class="table table-striped table-hover">

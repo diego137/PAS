@@ -13,8 +13,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/UserManagement.js"></script>
-
-
 </head>
 <body>
     <div class="container">
@@ -23,7 +21,6 @@
                 <div class="row">
                     <div class="col-sm-4">
 						<h2>Manage <b>Employees</b></h2>
-						
 					</div>
 					
 					<form class= "form-inline">

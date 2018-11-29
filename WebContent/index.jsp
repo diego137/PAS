@@ -80,7 +80,7 @@
         <div class="col-md-4 col-sm-4">
           <h2 class="ser-title">Our Service</h2>
           <hr class="botm-line">
-          <p>At Medi-kids, our mission is leading health care – in patient care, education and research.
+          <p>At Medi-kids, our mission is leading health care  in patient care, education and research.
             Through our combined efforts we strive to improve the lives of all people.
             Our vision is to be the premier health system for advancing medical care, education and research in the state, and to be among the leaders nationally.
             </p>

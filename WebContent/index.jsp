@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Medi-kids</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
@@ -12,6 +12,8 @@
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/css.css">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
   <!-- =======================================================
     Theme Name: Medilab
     Theme URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
@@ -59,23 +61,11 @@
                 We pioneer solutions. We make the impossible possible.</p>
              <!-- <a href="#contact" class="btn btn-appoint">Log in .</a>-->
              <button id="btn-Mostrar" class="btn btn-primary btn-lg">log-in</button>
-              <p>
-              <div class="col-sm-5 col-md-5"></div>
-              <div class="col-sm-2 col-md-2">
-              <form id="frm-login"action="" class="form-group">
-               <label id="txt-Usuario"> Users
-               </label> 
-               <input type="text" id="txt-Usuario" name="txt-Usuario" class="form-control">
-               <label id="txt-Password">Password</label> 
-               <input type="password" id="txt-Password" name="txt-Password" class="form-control">
-               <br>
-               <input type="submit" value="Send" class="btn btn-success btn-lg">
-              </form>
-            </div>
-            <div class="col-sm-5 col-md-5"></div></p>
+            
             </div>
             <div class="overlay-detail text-center">
-              <a href="#service"><i class="fa fa-angle-down"></i></a>
+            <p><a href="#service"><i class="fa fa-angle-down"></i></a></p>
+              
             </div>
           </div>
         </div>
@@ -498,12 +488,40 @@
     </div>
   </footer>
   <!--/ footer-->
+  
+  <div id="id01" class="modal">
+  
+  <form class="modal-content animate form-group" action="/action_page.php">
+    <div class="imgcontainer">
+      <span id="closeLogin" class="close" title="Close">&times;</span>
+      <img src="img/doctor.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container2">
+      <label for="txtUser"><b>Username</b></label>
+      <input id="txtUser" name="txtUser" type="text" placeholder="Enter Username" class="inputLogin form-control" required>
+
+      <label for="txtPassword"><b>Password</b></label>
+      <input id="txtPassword" name="txtPassword" type="password" placeholder="Enter Password" class="inputLogin form-control" required>
+        
+      <button type="submit" class="btnLogin">Login</button>
+
+    </div>
+
+    <div class="container2" style="background-color:#f1f1f1">
+      <button id="cancelarLogin" type="button" class="cancelbtn btnLogin">Cancel</button>
+      <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
+    </div>
+  </form>
+</div>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/custom.js"></script>
   <script src="contactform/contactform.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/scriptLogin.js"></script>
 
 </body>
 

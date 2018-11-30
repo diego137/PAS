@@ -47,11 +47,14 @@
 								<label for="selectAll"></label>
 							</span>
 						</th>
+						<th>Id Employee</th>
                         <th>Name</th>
-                        <th>Email</th>
-						<th>Address</th>
-                        <th>Phone</th>
-                        <th>Actions</th>
+                        <th>Last Name</th>
+						<th>CURP</th>
+                        <th>User</th>
+                        <th>Password</th>
+                        <th>Rol</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,79 +65,18 @@
 								<label for="checkbox1"></label>
 							</span>
 						</td>
-                        <td>Thomas Hardy</td>
-                        <td>thomashardy@mail.com</td>
-						<td>89 Chiaroscuro Rd, Portland, USA</td>
-                        <td>(171) 555-2222</td>
+                        <td>123</td>
+                        <td>Diego </td>
+						<td>García Dueñas</td>
+                        <td>GADD950217XHCR9307</td>
+                         <td>diego137</td>
+                         <td>contraseña</td>
+                         <td>Doctor</td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>
-                    <tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox2" name="options[]" value="1">
-								<label for="checkbox2"></label>
-							</span>
-						</td>
-                        <td>Dominique Perrier</td>
-                        <td>dominiqueperrier@mail.com</td>
-						<td>Obere Str. 57, Berlin, Germany</td>
-                        <td>(313) 555-5735</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                        </td>
-                    </tr>
-					<tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox3" name="options[]" value="1">
-								<label for="checkbox3"></label>
-							</span>
-						</td>
-                        <td>Maria Anders</td>
-                        <td>mariaanders@mail.com</td>
-						<td>25, rue Lauriston, Paris, France</td>
-                        <td>(503) 555-9931</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox4" name="options[]" value="1">
-								<label for="checkbox4"></label>
-							</span>
-						</td>
-                        <td>Fran Wilson</td>
-                        <td>franwilson@mail.com</td>
-						<td>C/ Araquil, 67, Madrid, Spain</td>
-                        <td>(204) 619-5731</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                        </td>
-                    </tr>					
-					<tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox5" name="options[]" value="1">
-								<label for="checkbox5"></label>
-							</span>
-						</td>
-                        <td>Martin Blank</td>
-                        <td>martinblank@mail.com</td>
-						<td>Via Monte Bianco 34, Turin, Italy</td>
-                        <td>(480) 631-2097</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                        </td>
-                    </tr> 
                 </tbody>
             </table>
 			<div class="clearfix">
@@ -162,21 +104,33 @@
 					</div>
 					<div class="modal-body">					
 						<div class="form-group">
-							<label>Name</label>
+							<label>Id Empleado</label>
 							<input type="text" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<label>Email</label>
-							<input type="email" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>Address</label>
-							<textarea class="form-control" required></textarea>
-						</div>
-						<div class="form-group">
-							<label>Phone</label>
+							<label>Nombre</label>
 							<input type="text" class="form-control" required>
-						</div>					
+						</div>
+						<div class="form-group">
+							<label>Apellidos</label>
+							<input type="text" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>CURP</label>
+							<input type="text" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Usuario</label>
+							<input type="text" class="form-control" required>
+						</div>	
+						<div class="form-group">
+							<label>Contraseña</label>
+							<input type="text" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Rol</label>
+							<input type="text" class="form-control" required>
+						</div>							
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

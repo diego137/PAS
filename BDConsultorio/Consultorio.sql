@@ -13,6 +13,18 @@ create table Empleados
     FirsTime Bit (1)
 );
 
+insert into Empleados (idEmpleados,Nombre,Apellidos,Curp,usuarioLog,Contrasena,Rol)
+values 
+(0001,'Lalo','Tampoco Se','LOLI93217XHCR','Lalona','Ceti','enfermera'),
+(0002,'Filanito','Detal','DETI93217XHCR','Solovino','Porsucuenta','farmaceutico'),
+(0003,'Rafa','Nise','RFG93217XHCR','Rafis','dormido','Paciente'),
+(0004,'Elprofe','Elmachio','MACHI93217XHCR','Leon','CuandoHasvisto','enfermera');
+
+drop table empleados;
+select * from Empleados;
+delete from Empleados;
+
+delete from Empleados where idEmpleados=0;
 
 create table Paciente
 (

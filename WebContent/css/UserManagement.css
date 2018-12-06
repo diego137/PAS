@@ -5,11 +5,31 @@
 		font-family: 'Varela Round', sans-serif;
 		font-size: 13px;
 	}
+
+	#banner{
+	background: url('../img/bg-banner.jpg') no-repeat fixed;
+	background-size: cover;
+	min-height: 650px;
+	position: relative;
+}
+
+	
+
 	#txtBusqueda{
-	margin: 10px
-	 color: black;   
-	 
-	}
+		margin: 3px;
+	 color: black;  }
+	 #btnAddNew
+	 {
+	margin: 3px;
+	 }
+	  #btnDeleteNew
+	 {
+	margin: 3px;
+	 }
+	  #btnBuscar
+	 {
+	margin: 3px;
+	 }
 	
 	.table-wrapper {
         background: #fff;

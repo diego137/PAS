@@ -1,5 +1,4 @@
 package com.employees.model;
-
 public class Employees {
 	
 	private int idEmployee;
@@ -16,10 +15,12 @@ public class Employees {
 		
 	}
 	
-	public Employees (int idEmployee ,String name,String lastName,String user,String password,String rol,boolean firstTime)
+	public Employees (int idEmployee ,String name,String lastName,String curp, String user,String password,String rol,boolean firstTime)
 	{
 		setIdEmployee(idEmployee);
 		setName(name);
+		setLastName(lastName);
+		setCurp(curp);
 		setUser(user);
 		setPassword(password);
 		setRol(rol);

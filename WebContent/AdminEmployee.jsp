@@ -65,7 +65,7 @@
        <%--CONEXION A BASE DE DATOS CON SCRIPLET PARA MOSTRARLOS EN ESTE JSP --%>         
 		<% 
 		
-		String miDireccionServidor="jdbc:mysql://localhost:3306/Consultorio?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+		String miDireccionServidor="jdbc:mysql://localhost:3306/consultorio?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String miUsuario="root";
 		String miPassword="root";
 		ResultSet datos = null;
@@ -82,7 +82,7 @@
 			datos = stmnt.executeQuery(sentenciaSQL);
 				while(datos.next())
 				{%><tbody>
-                <tr>
+                <tr id=<%="fila"+datos.getInt("idEmpleados") %>>
 				 <td>
 				  <span class="custom-checkbox">
 					<input type="checkbox" id="checkbox1" name="options[]" value="1">
@@ -97,7 +97,16 @@
 				<td><%=datos.getString("Rol") %></td>		
 				<td>
 					<%int idUsuario = datos.getInt("idEmpleados"); %>
-                   <a href=<%= "#editEmployeeModal?idEmpleado="+idUsuario%> class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                   <a href="#editEmployeeModal" class="edit" data-toggle="modal" data-whatever=
+                   <%=                   datos.getInt("idEmpleados")+"@"
+                   						+datos.getString("Nombre")+"@"
+                   						+datos.getString("Apellidos")+"@"
+					                   +datos.getString("Curp")+"@"
+					                   +datos.getString("Rol")%>
+                   >
+                   <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                   </a>
+                   <!-- <a href=<%="SearchEmployeeServlet?txtBusqueda="+datos.getInt("idEmpleados")%> class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>-->
                    <a href=<%= "deleteEmployeeModal?idEmpleado="+idUsuario%> class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                </td>
                     </tr>
@@ -227,21 +236,27 @@
 					</div>
 					<div class="modal-body">					
 						<div class="form-group">
+							<label>ID Employee</label>
+							<input type="text" id="txtIdM" name="txtId" value=<%=request.getAttribute("idEmpleado") %> class="form-control" required>
+						</div>
+						<div class="form-group">
 							<label>Name</label>
-							<input type="text" class="form-control" required>
+							<input type="text" id="txtNombreM" name="txtNombre" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<label>Email</label>
-							<input type="email" class="form-control" required>
+							<label>Last Name</label>
+							<input type="text" id="txtApellidosM" name="txtApellidos" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<label>Address</label>
-							<textarea class="form-control" required></textarea>
+							<label>CURP</label>
+							<input type="text" id="txtCurpM" name="txtCurp" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<label>Phone</label>
-							<input type="text" class="form-control" required>
-						</div>					
+						<select id="txtRolM" name="txtRol" class="form-control">
+						  <option value="DOCTOR">DOCTOR</option>
+						  <option value="NURSE">NURSE</option>
+						</select>
+						</div>							
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

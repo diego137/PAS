@@ -12,7 +12,6 @@
 	min-height: 650px;
 	position: relative;
 }
-
 	
 
 	#txtBusqueda{
@@ -34,21 +33,28 @@
 	.table-wrapper {
         background: #fff;
         padding: 20px 25px;
-        margin: 30px 0;
+		margin: 30px 0;
+		color:#000;
 		border-radius: 3px;
-        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+		box-shadow: 0 1px 1px rgba(0,0,0,.05);
+		background: rgba(240, 255, 240, 0.5);
+			
     }
 	.table-title {        
 		padding-bottom: 15px;
-		background: #435d7d;
+		/*background: #435d7d;*/
 		color: #fff;
 		padding: 16px 30px;
 		margin: -20px -25px 10px;
 		border-radius: 3px 3px 0 0;
-    }
+		background: rgba(41, 83, 153, 0.5);
+	}
+	
+
     .table-title h2 {
 		margin: 5px 0 0;
 		font-size: 24px;
+		
 	}
 	.table-title .btn-group {
 		float: right;
@@ -85,11 +91,15 @@
 		width: 100px;
 	}
     table.table-striped tbody tr:nth-of-type(odd) {
-    	background-color: #fcfcfc;
+    	background: rgba(240, 255, 240, 0.5);
 	}
 	table.table-striped.table-hover tbody tr:hover {
-		background: #f5f5f5;
+		background: rgba(240, 255, 240, 0.5);
+		color: #000;
+		
+		
 	}
+	
     table.table th i {
         font-size: 13px;
         margin: 0 5px;
@@ -109,6 +119,7 @@
 	}
 	table.table td a:hover {
 		color: #2196F3;
+		
 	}
 	table.table td a.edit {
         color: #FFC107;

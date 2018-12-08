@@ -1,10 +1,15 @@
 
+var xhr = new XMLHttpRequest();
 $(document).ready(function(){
 	// Activate tooltip
 	$('[data-toggle="tooltip"]').tooltip();
 
 document.getElementById('btnAdd').addEventListener("click",CrearEmpleado);
+
 document.getElementById('txtCurp').addEventListener("keyup",CopiarEntradas);
+
+
+
 
 function CrearEmpleado()
 {		  
@@ -53,7 +58,7 @@ function CrearEmpleado()
 				if(result=='duplicate')
 				Swal({ title: 'Id already exist', confirmButtonText: 'Ok', onAfterClose: () => {
 					setTimeout(() => $("#txtId").focus(), 100);}}); 	
-			
+			//  en el servlet si nRegistro > 0 --> recarga la pagina principal donde se muestra la tabla
 				if(result=='succes'){ 
 				swal('Succesfull Added').then(function(){window.location.replace("AdminEmployee.jsp");}) 
 				}
@@ -64,7 +69,8 @@ function CrearEmpleado()
 					setTimeout(() => $("#txtId").focus(), 100);}  
 					});}		
 	});          
-}
+	}
+
 
 
 	function CopiarEntradas()

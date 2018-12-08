@@ -35,6 +35,7 @@ public class CreateEmployeesServlet extends HttpServlet {
 	
 	int a = Integer.parseInt(request.getParameter("txtId"));
 			if(a<0)
+				//identificador para el javascript swal
 			response.getWriter().write("negativeNumber");
 		
 		else if (request.getParameter("txtId").equals(""))

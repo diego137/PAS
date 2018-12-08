@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Administrador</title>
@@ -22,7 +22,7 @@
 </head>
 <body>
 <section id="banner" class="banner">
-    <div class="container">
+    <div class="container" >
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
@@ -30,11 +30,12 @@
 						<h2>Manage <b>Employees</b></h2>
 					</div>
 					
-					
+					<form action="SearchEmployeeServlet" method="POST">
 					<div class="col-sm-4 col-md-4 col-lg-3 form-inline ">
-					    <input id="txtBusqueda" type="text" class="form-control" placeholder="Search by Id" name="txtBusqueda">
-					    <input type="button" id="btnBuscar" name="btnBuscar" class="btn btn-info" value="Buscar">
+					    <input id="txtBusqueda" type="number" class="form-control" placeholder="Search by Id" name="txtBusqueda" required>
+					    <input type="submit" id="btnBuscar" name="btnBuscar" class="btn btn-info" value="Buscar">
 					</div>
+					</form>
 					<div class="col-sm-4 col-md-4 col-lg-3 "  >
 						<a href="#addEmployeeModal" id="btnAddNew" class="btn btn-success form-control" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
 						<a href="#deleteEmployeeModal" id="btnDeleteNew"class="btn btn-danger form-control" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete Employee</span></a>						
@@ -62,10 +63,11 @@
                     </tr>
                 </thead>
        <%--CONEXION A BASE DE DATOS CON SCRIPLET PARA MOSTRARLOS EN ESTE JSP --%>         
-		<% String miDireccionServidor="jdbc:mysql://localhost:3306/Consultorio?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+		<% 
+		
+		String miDireccionServidor="jdbc:mysql://localhost:3306/Consultorio?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String miUsuario="root";
 		String miPassword="root";
-		String sentenciaSQL = "select * from Empleados";
 		ResultSet datos = null;
 		Connection conn=null;
 		Statement stmnt = null;
@@ -73,13 +75,13 @@
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
 			conn = DriverManager.getConnection(miDireccionServidor, miUsuario, miPassword);
-			System.out.println("conexion establecida");
 			stmnt = conn.createStatement();
+			if(request.getAttribute("txtId")==null)
+			{
+			String sentenciaSQL = "select * from empleados";
 			datos = stmnt.executeQuery(sentenciaSQL);
-			
-			while(datos.next())
-			{	
-			%><tbody>
+				while(datos.next())
+				{%><tbody>
                 <tr>
 				 <td>
 				  <span class="custom-checkbox">
@@ -92,16 +94,43 @@
 				<td><%=datos.getString("Curp") %></td>
 				<td><%=datos.getString("usuarioLog") %></td>
 				<td><%=datos.getString("Contrasena") %></td>
-				<td><%=datos.getString("Rol") %></td>
-				
+				<td><%=datos.getString("Rol") %></td>		
 				<td>
-                   <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                   <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+					<%int idUsuario = datos.getInt("idEmpleados"); %>
+                   <a href=<%= "#editEmployeeModal?idEmpleado="+idUsuario%> class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                   <a href=<%= "deleteEmployeeModal?idEmpleado="+idUsuario%> class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                </td>
                     </tr>
                 </tbody>		
-		<%	} 
-		}	 
+		<% }
+		}else{
+		String sentenciaSQL = "select * from empleados where idEmpleados="+request.getAttribute("txtId");
+		datos = stmnt.executeQuery(sentenciaSQL);
+		datos.next();
+		{%><tbody>
+        <tr>
+		 <td>
+		  <span class="custom-checkbox">
+			<input type="checkbox" id="checkbox1" name="options[]" value="1">
+			<label for="checkbox1"></label>
+		  </span>
+		<td><%=request.getAttribute("txtId")%></td>
+		<td><%=request.getAttribute("txtNombre") %></td>
+		<td><%=request.getAttribute("txtApellidos") %></td>
+		<td><%=request.getAttribute("txtCurp") %></td>
+		<td><%=request.getAttribute("txtUsuario") %></td>
+		<td><%=request.getAttribute("txtContrasena") %></td>
+		<td><%=request.getAttribute("txtRol") %></td>
+		
+		<td>
+           <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+           <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+       </td>
+            </tr>
+        </tbody>		
+<% }
+}
+			}
 	catch(Exception miExcepcioncita)
 		{
 			miExcepcioncita.printStackTrace();
@@ -117,9 +146,11 @@
 			{
 				miExcepcioncita2.printStackTrace();
 			}			
-		}  	 
-		 %>   
-	<%--TERMINA CONECCION A BASE DE DATOS CON SCRIPLET PARA MOSTRARLOS EN ESTE JSP --%>            
+		}  	%> 
+		
+		   
+	<%--TERMINA CONECCION A BASE DE DATOS CON SCRIPLET PARA MOSTRARLOS EN ESTE JSP --%> 
+             
             </table>
 			<div class="clearfix">
                 <div class="hint-text">El pagination no <b>Jala</b> Ni pedo <b>No</b> ps chido</div>
@@ -148,7 +179,7 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>ID Employee</label>
-							<input type="text" id="txtId" name="txtId" class="form-control" required>
+							<input type="text" id="txtId" name="txtId" value=<%=request.getAttribute("idEmpleado") %> class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Name</label>
@@ -172,9 +203,8 @@
 						</div>
 						<div class="form-group">
 						<select id="txtRol" name="txtRol" class="form-control">
-						  <option value="Doctor">Doctor</option>
-						  <option value="Nurse">Nurse</option>
-						  <option value="Pharmacist">Pharmacist</option>
+						  <option value="DOCTOR">DOCTOR</option>
+						  <option value="NURSE">NURSE</option>
 						</select>
 						</div>							
 					</div>

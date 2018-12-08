@@ -3,7 +3,7 @@ use consultorio;
 
 create table Pacientes 
 (
-	idPaciente int primary key not null,
+	idPaciente int primary key not null AUTO_INCREMENT,
     nombrePaciente varchar(15),
     apellidosPaciente varchar(40),
     curpPaciente varchar(30),
@@ -13,7 +13,7 @@ create table Pacientes
 
 create table Consultas
 (
-	idConsulta int primary key not null,
+	idConsulta int primary key not null AUTO_INCREMENT,
     idPaciente int,
     idReceta int,
     fecha varchar(15),
@@ -24,8 +24,20 @@ create table Consultas
 
 create table Recetas
 (
-	idReceta int primary key not null,
+	idReceta int primary key not null AUTO_INCREMENT,
     descripcion varchar(250)
+);
+
+create table Empleados 
+(
+	idEmpleados int primary key not null AUTO_INCREMENT,
+    Nombre varchar(30),
+    Apellidos varchar(30),
+    Curp varchar(30),
+    usuarioLog varchar(30),
+    Contrasena varchar(30),
+    Rol varchar(30),
+    FirsTime Bit (1)
 );
 
 #Prueba de insercion de datos

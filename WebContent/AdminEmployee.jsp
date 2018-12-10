@@ -1,4 +1,6 @@
-<%@ page import="java.sql.ResultSet" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="java.sql.ResultSet"  %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
@@ -188,7 +190,7 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>ID Employee</label>
-							<input type="text" id="txtId" name="txtId" value=<%=request.getAttribute("idEmpleado") %> class="form-control" required>
+							<input type="text" id="txtId" name="txtId" value=<%=request.getAttribute("idEmpleado")%> class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Name</label>

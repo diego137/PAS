@@ -3,7 +3,7 @@ var xhr = new XMLHttpRequest();
 $(document).ready(function(){
 	// Activate tooltip
 	$('[data-toggle="tooltip"]').tooltip();
-
+	
 document.getElementById('btnAdd').addEventListener("click",CrearEmpleado);
 document.getElementById('txtCurp').addEventListener("keyup",CopiarEntradas);
 document.getElementById('txtNombreM').addEventListener("input",hacer);
@@ -16,7 +16,7 @@ function hacer(){
 
 function CrearEmpleado()
 {		  
-	var id = document.getElementById('txtId').value;
+	//var id = document.getElementById('txtId').value;
 	var nombre = document.getElementById('txtNombre').value;
 	var apellido = document.getElementById('txtApellidos').value;
 	var curp = document.getElementById('txtCurp').value;
@@ -24,20 +24,15 @@ function CrearEmpleado()
 	var contrasena = document.getElementById('txtContrasena').value;
 	var rol = document.getElementById('txtRol').value;
 
+	
+
 	$.ajax({ 
 	type: "POST", 
 	url: "CreateEmployeesServlet", 
-	data: {txtId:id,txtNombre:nombre,txtApellidos:apellido,txtCurp:curp,txtUsuario:usuario,txtContrasena:contrasena,txtRol:rol}, 
+	data: {txtNombre:nombre,txtApellidos:apellido,txtCurp:curp,txtUsuario:usuario,txtContrasena:contrasena,txtRol:rol}, 
 			//cuando la respuesta del servlet es exitosa
 			success: function(result){
-				if(result=='negativeNumber')
-					Swal({ title: 'Only positive numbers', confirmButtonText: 'Ok', onAfterClose: () => {
-					setTimeout(() => $("#txtId").focus(), 100);}});
-
-				if(result=='vacioId')
-					Swal({ title: 'Fill Id Employee input', confirmButtonText: 'Ok', onAfterClose: () => {
-					setTimeout(() => $("#txtId").focus(), 100);}});
-
+			
 				if(result=='vacioName')
 					Swal({ title: 'Fill Name input', confirmButtonText: 'Ok', onAfterClose: () => {
 					setTimeout(() => $("#txtNombre").focus(), 100);}});
@@ -68,7 +63,7 @@ function CrearEmpleado()
 			},
 			//Si ocurre un error en el servlet muestra mensaje
 			error:function(jqXHR, textStatus, errorThrown){
-				Swal({ title: 'Error, Type only numbers', confirmButtonText: 'Ok', onAfterClose: () => {
+				Swal({ title: 'Server error', confirmButtonText: 'Ok', onAfterClose: () => {
 					setTimeout(() => $("#txtId").focus(), 100);}  
 					});}		
 	});          

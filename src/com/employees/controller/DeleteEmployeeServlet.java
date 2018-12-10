@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,16 +45,13 @@ public class DeleteEmployeeServlet extends HttpServlet {
 			out.println("<script>");
 			out.println("$(document).ready(function(){");
 			out.println("Swal({ type:'success',title: 'Deleted!',text: 'Your user has been deleted!', onAfterClose: () => { setTimeout(() => location.href = 'AdminEmployee.jsp', 100);}});});");
-		   out.println("</script>");
+		    out.println("</script>");
 			
 			}
 			
 			else {
-				
-			
 			}
 		}
-		
 		catch(Exception e)
 		{
 			e.printStackTrace();
@@ -69,9 +66,6 @@ public class DeleteEmployeeServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		
 		out.close();
-
 	}
-
 }

@@ -1,0 +1,29 @@
+
+body,html{
+    background: url('../img/bg-banner.jpg') no-repeat fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+
+}
+#nombre{
+  margin-top: 25%;
+}
+#banner{
+    background-color: RGBA(13, 70, 83, 0.78);
+    min-height: 670px;
+    margin-top: 15%;
+}
+
+.center-block {
+    display: block;
+    margin-right: 37%;
+   margin-left: auto;
+   margin-top: -15%;
+    width: 30%;
+}
+#btn-gru{
+   background-color: Transparent;
+    color:black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

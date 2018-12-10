@@ -81,9 +81,10 @@ public class consulta
 	
 	public String toCard()
 	{
-		return "<div class=\"card col-lg-12 mb-4\">"
+		return "<div class='row'>"
+				+"<div class=\"card cuerpoCard col-lg-12 mb-4\">"
 				+ "<header>"
-				+ 	"<h1>Fecha "+getFecha()+"</h1>"
+				+ 	"<h1 class='tituloCard'>Fecha "+getFecha()+"</h1>"
 				+ "</header>"
 				
 				+ "<div class='row'>" + 
@@ -97,14 +98,20 @@ public class consulta
 						"<input id='txtPeso' name='txtPeso' type='text' disabled value="+getPeso()+" class='form-control'>" + 
 					"</div>" + 
 				"</div>"
-				+ "<div class='row'>"
-					+"<h1>Diagnostico</h1>"
-					+ "<textarea disabled class='form-control'>"+getDiagnostico()+"</textarea>"
+				+ "<div class='row mx-1'>"
+					+"<div class='col-lg-12'>"
+						+"<h1>Diagnostico</h1>"
+						+ "<textarea disabled class='form-control'>"+getDiagnostico()+"</textarea>"
+					+ "</div>"
 				+ "</div>"
-				+ "<footer>"
-					+"<h1>Receta</h1>"
-					+ "<textarea disabled class='form-control'>"+getMiReceta().getDescripcion()+"</textarea>"
-				+ "</footer>"
-				+ "</div>" ;
+				+ "<div class='row'>"
+					+ "<div class='col-lg-12'>"
+						+"<h1>Receta</h1>"
+						+ "<textarea disabled class='form-control mb-5'>"+getMiReceta().getDescripcion()+"</textarea>"
+					+ "</div>"
+					+ "<div class='row'></div>"
+				+ "</div>"
+				+ "</div></div><div class='row separado'></div>" 
+				;
 	}
 }

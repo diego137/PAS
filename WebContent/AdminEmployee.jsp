@@ -191,14 +191,6 @@
 					</div>
 					<div class="modal-body">					
 						<div class="form-group">
-							<label>ID Employee</label>
-<<<<<<< HEAD
-							<input type="text" id="txtId" name="txtId" value=<%=request.getAttribute("idEmpleado")%> class="form-control" required>
-=======
-							<input type="text" id="txtId" name="txtId" value=<%=request.getAttribute("txtId") %> class="form-control" required>
->>>>>>> c41cca89de4b54b813b199af7da6fccfa7384052
-						</div>
-						<div class="form-group">
 							<label>Name</label>
 							<input type="text" id="txtNombre" name="txtNombre" class="form-control" required>
 						</div>

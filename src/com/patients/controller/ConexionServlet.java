@@ -1,12 +1,14 @@
 package com.patients.controller;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.LinkedList;
+import java.util.Properties;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,9 +41,15 @@ public class ConexionServlet extends HttpServlet
 		LinkedList<consulta> listaConsultas = new LinkedList<consulta>();
 		
 		//datos de acceso
-		String url="jdbc:mysql://localhost:3306/consultorio?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-		String username="root";
-		String password="root";
+		Properties props=new Properties();
+		String propNombreArchivo = "sql.properties";
+		InputStream input=null;
+		input=getClass().getClassLoader().getResourceAsStream(propNombreArchivo);
+		props.load(input);
+		String url=props.getProperty("url");
+		String username=props.getProperty("username");
+		String password=props.getProperty("password");
+		
 		
 		//Creacion de objetos de la conexion a la base de datos
 		Connection conn=null;

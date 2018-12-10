@@ -13,6 +13,18 @@ create table Empleados
     FirsTime Bit (1)
 );
 
+create table Empleados 
+(
+	idEmpleados int primary key not null AUTO_INCREMENT,
+    Nombre varchar(30),
+    Apellidos varchar(30),
+    Curp varchar(30),
+    usuarioLog varchar(30),
+    Contrasena varchar(30),
+    Rol varchar(30),
+    FirsTime Bit (1)
+);
+
 insert into Empleados (idEmpleados,Nombre,Apellidos,Curp,usuarioLog,Contrasena,Rol)
 values (0,null,null,null,null,null,null);
 

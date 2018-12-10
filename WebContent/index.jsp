@@ -1,6 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -196,7 +198,7 @@
               <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
               <div class="more-features-box-text-description">
                 <h3>Our Mission.</h3>
-                <p>At Medi-kids, our mission is leading health care – in patient care, education and research.
+                <p>At Medi-kids, our mission is leading health care â in patient care, education and research.
                   Through our combined efforts we strive to improve the lives of all people.</p>
               </div>
             </div>
@@ -365,11 +367,11 @@
       <div class=" row">
         <div class="col-md-2"></div>
         <div class="text-right-md col-md-4 col-sm-4">
-          <h2 class="section-title white lg-line">« A few words<br> about us »</h2>
+          <h2 class="section-title white lg-line">Â« A few words<br> about us Â»</h2>
         </div>
         <div class="col-md-4 col-sm-5">
            "My greaest students of the all, very profesionals, pro-active and responsables, hard-work, and team work, the deserve a 100"
-          <p class="text-right text-primary"><i>— Osacar Santana Generation</i></p>
+          <p class="text-right text-primary"><i>â Osacar Santana Generation</i></p>
         </div>
         <div class="col-md-2"></div>
       </div>
@@ -472,7 +474,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            © Copyright Medi-kidsTheme. All Rights Reserved
+            Â© Copyright Medi-kidsTheme. All Rights Reserved
             <div class="credits">
               <!--
                 All the links in the footer should remain intact.

@@ -1,10 +1,39 @@
-#idBody
+body
+{
+	color: black;
+}
+
+#bg
 {
 	background: url('../img/bg-banner.jpg') no-repeat fixed;
 	background-size: cover;
-	min-height: 650px;
+	min-height: 670px;
 	position: relative;
+}
+
+#bg-color
+{
 	background-color: RGBA(13, 70, 83, 0.78);
+	min-height: 670px;
+}
+
+.tituloCard
+{
+	color: white;
+	background: #2C3E50;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #4CA1AF, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.cuerpoCard
+{
+  background-color: white;
+  border-radius: 5px;
+}
+
+.separado
+{
+	margin-top: 5vh;
 }
 
 /*#izquierda

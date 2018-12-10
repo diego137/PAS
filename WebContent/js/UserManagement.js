@@ -101,7 +101,7 @@ function CrearEmpleado()
 		  
 		  //Separar campos obtenidos
 		  var arreglo = recipient.split("@");
-		  
+		   
 		  //console.log(arreglo)//Visualizar que envia
 		  
 		  

@@ -107,7 +107,7 @@
                    <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
                    </a>
                    <!-- <a href=<%="SearchEmployeeServlet?txtBusqueda="+datos.getInt("idEmpleados")%> class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>-->
-                   <a href=<%= "deleteEmployeeModal?idEmpleado="+idUsuario%> class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                   <a href=<%="/PAS/DeleteEmployeeServlet?idEmpleados="+idUsuario%> class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                </td>
                     </tr>
                 </tbody>		
@@ -133,7 +133,9 @@
 		
 		<td>
            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-           <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+           
+           <a href=<%="/PAS/DeleteEmployeeServlet?idEmpleados="+ datos.getInt("idEmpleados")%> class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+           
        </td>
             </tr>
         </tbody>		
@@ -154,7 +156,7 @@
 			catch (Exception miExcepcioncita2)
 			{
 				miExcepcioncita2.printStackTrace();
-			}			
+		}			
 		}  	%> 
 		
 		   
@@ -188,7 +190,7 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>ID Employee</label>
-							<input type="text" id="txtId" name="txtId" value=<%=request.getAttribute("idEmpleado") %> class="form-control" required>
+							<input type="text" id="txtId" name="txtId" value=<%=request.getAttribute("txtId") %> class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Name</label>
@@ -237,7 +239,7 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>ID Employee</label>
-							<input type="text" id="txtIdM" name="txtId" value=<%=request.getAttribute("idEmpleado") %> class="form-control" required>
+							<input type="text" id="txtIdM" name="txtId" value=<%=request.getAttribute("txtId") %> class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Name</label>

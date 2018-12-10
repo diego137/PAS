@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -24,13 +25,11 @@ import com.employees.model.Employees;
 @MultipartConfig
 public class CreateEmployeesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-
+      
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html charset=\"UTF-8\"");
 		PrintWriter salida = response.getWriter();
 		int nRegistros=0;
-		//obtenemos valores de los textboxes
 	Employees miEmpleado = new Employees();
 	
 	int a = Integer.parseInt(request.getParameter("txtId"));
@@ -58,22 +57,22 @@ public class CreateEmployeesServlet extends HttpServlet {
 		
 		else {
 		miEmpleado.setIdEmployee(Integer.parseInt(request.getParameter("txtId")));
+		int id = Integer.parseInt(request.getParameter("txtId"));
+		request.setAttribute("idEmpleado", id);
+		
+	
 		miEmpleado.setName(request.getParameter("txtNombre"));
 		miEmpleado.setLastName(request.getParameter("txtApellidos" ));
 		miEmpleado.setCurp(request.getParameter("txtCurp"));
 		miEmpleado.setUser(request.getParameter("txtUsuario"));
 		miEmpleado.setPassword(request.getParameter("txtContrasena"));
 		miEmpleado.setRol(request.getParameter("txtRol")); 
-		//salida.println(miEmpleado.toString());
-		//salida.println("estas en el post"); 
 		
 		String miUrl="jdbc:mysql://localhost:3306/Consultorio?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String miUsuario="root";
 		String miPassword="root";	
-		
 		Connection conn = null;
 		Statement stmnt = null;
-		
 		String setencialSQL="insert into Empleados (idEmpleados,Nombre,Apellidos,Curp,usuarioLog,Contrasena,Rol) values("+miEmpleado.getIdEmployee()+",'"+miEmpleado.getName()+"','"+miEmpleado.getLastName()+ "','"+miEmpleado.getCurp()+"','"+miEmpleado.getUser()+"','"+miEmpleado.getPassword()+"','"+miEmpleado.getRol()+"')";
 		
 		try
@@ -81,7 +80,7 @@ public class CreateEmployeesServlet extends HttpServlet {
 			Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
 			conn = DriverManager.getConnection(miUrl, miUsuario, miPassword);
 			stmnt = conn.createStatement();
-			nRegistros = stmnt.executeUpdate(setencialSQL);	
+			nRegistros = stmnt.executeUpdate(setencialSQL);
 			if (nRegistros>0)
 			{
 				response.getWriter().write("succes");

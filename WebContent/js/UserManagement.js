@@ -5,9 +5,7 @@ $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();
 
 document.getElementById('btnAdd').addEventListener("click",CrearEmpleado);
-
 document.getElementById('txtCurp').addEventListener("keyup",CopiarEntradas);
-
 document.getElementById('txtNombreM').addEventListener("input",hacer);
 document.getElementById('txtApellidosM').addEventListener("input",hacer);
 

@@ -84,7 +84,7 @@
 			datos = stmnt.executeQuery(sentenciaSQL);
 				while(datos.next())
 				{%><tbody>
-                <tr id=<%="fila"+datos.getInt("idEmpleados") %>>
+                <tr>
 				 <td>
 				  <span class="custom-checkbox">
 					<input type="checkbox" id="checkbox1" name="options[]" value="1">
@@ -110,7 +110,7 @@
                    <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
                    </a>
                    <!-- <a href=<%="SearchEmployeeServlet?txtBusqueda="+datos.getInt("idEmpleados")%> class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>-->
-                   <a href=<%="/PAS/DeleteEmployeeServlet?idEmpleados="+idUsuario%> class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                   <a onclick="return confirm('Are you sure?')" href=<%="/PAS/DeleteEmployeeServlet?idEmpleados="+idUsuario%>  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                </td>
                     </tr>
                 </tbody>		
@@ -137,7 +137,7 @@
 		<td>
            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
            
-           <a href=<%="/PAS/DeleteEmployeeServlet?idEmpleados="+ datos.getInt("idEmpleados")%> class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+           <a href=<%="/PAS/DeleteEmployeeServlet?idEmpleados="+ datos.getInt("idEmpleados")%> onclick="return confirm('Are you sure?')"class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
            
        </td>
             </tr>
@@ -181,7 +181,7 @@
         </div>
     </div>
    </section>
-	<!-- Edit Modal HTML -->
+	<!-- Add Modal HTML -->
 	<div id="addEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -192,16 +192,8 @@
 					</div>
 					<div class="modal-body">					
 						<div class="form-group">
-							<label>ID Employee</label>
-<<<<<<< HEAD
-							<input type="text" id="txtId" name="txtId" value=<%=request.getAttribute("idEmpleado")%> class="form-control" required>
-=======
-							<input type="text" id="txtId" name="txtId" value=<%=request.getAttribute("txtId") %> class="form-control" required>
->>>>>>> c41cca89de4b54b813b199af7da6fccfa7384052
-						</div>
-						<div class="form-group">
 							<label>Name</label>
-							<input type="text" id="txtNombre" name="txtNombre" class="form-control" required>
+							<input type="text" id="txtNombre" name="txtNombre" class="form-control" required autofocus>
 						</div>
 						<div class="form-group">
 							<label>Last Name</label>
@@ -209,15 +201,15 @@
 						</div>
 						<div class="form-group">
 							<label>CURP</label>
-							<input type="text" id="txtCurp" name="txtCurp" class="form-control" required>
+							<input type="text" id="txtCurp" name="txtCurp" class="form-control" required onkeyup="this.value = this.value.toUpperCase();">
 						</div>
 						<div class="form-group">
 							<label>User</label>
-							<input type="text" id="txtUsuario" name="txtUsuario" class="form-control" required>
+							<input type="text" id="txtUsuario" name="txtUsuario" class="form-control" required onkeyup="this.value = this.value.toUpperCase();">
 						</div>	
 						<div class="form-group">
 							<label>Password</label>
-							<input type="text" id="txtContrasena" name="txtContrasena" class="form-control" required>
+							<input type="text" id="txtContrasena" name="txtContrasena" class="form-control" required onkeyup="this.value = this.value.toUpperCase();">
 						</div>
 						<div class="form-group">
 						<select id="txtRol" name="txtRol" class="form-control">

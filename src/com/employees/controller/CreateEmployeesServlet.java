@@ -7,9 +7,6 @@ import java.sql.DriverManager;
 
 import java.sql.SQLException;
 import java.sql.Statement;
-
-
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -30,17 +27,8 @@ public class CreateEmployeesServlet extends HttpServlet {
 		response.setContentType("text/html charset=\"UTF-8\"");
 		PrintWriter salida = response.getWriter();
 		int nRegistros=0;
-	Employees miEmpleado = new Employees();
-	
-	int a = Integer.parseInt(request.getParameter("txtId"));
-			if(a<0)
-				//identificador para el javascript swal
-			response.getWriter().write("negativeNumber");
-		
-		else if (request.getParameter("txtId").equals(""))
-			response.getWriter().write("vacioId");
-					
-		else if (request.getParameter("txtNombre").equals(""))
+	Employees miEmpleado = new Employees();				
+		if (request.getParameter("txtNombre").equals(""))
 				response.getWriter().write("vacioName");
 		
 		else if (request.getParameter("txtApellidos").equals(""))
@@ -56,11 +44,6 @@ public class CreateEmployeesServlet extends HttpServlet {
 				response.getWriter().write("vacioContrasena");
 		
 		else {
-		miEmpleado.setIdEmployee(Integer.parseInt(request.getParameter("txtId")));
-		int id = Integer.parseInt(request.getParameter("txtId"));
-		request.setAttribute("idEmpleado", id);
-		
-	
 		miEmpleado.setName(request.getParameter("txtNombre"));
 		miEmpleado.setLastName(request.getParameter("txtApellidos" ));
 		miEmpleado.setCurp(request.getParameter("txtCurp"));
@@ -73,7 +56,7 @@ public class CreateEmployeesServlet extends HttpServlet {
 		String miPassword="root";	
 		Connection conn = null;
 		Statement stmnt = null;
-		String setencialSQL="insert into Empleados (idEmpleados,Nombre,Apellidos,Curp,usuarioLog,Contrasena,Rol) values("+miEmpleado.getIdEmployee()+",'"+miEmpleado.getName()+"','"+miEmpleado.getLastName()+ "','"+miEmpleado.getCurp()+"','"+miEmpleado.getUser()+"','"+miEmpleado.getPassword()+"','"+miEmpleado.getRol()+"')";
+		String setencialSQL="insert into Empleados (idEmpleados,Nombre,Apellidos,Curp,usuarioLog,Contrasena,Rol) values(default,'"+miEmpleado.getName()+"','"+miEmpleado.getLastName()+ "','"+miEmpleado.getCurp()+"','"+miEmpleado.getUser()+"','"+miEmpleado.getPassword()+"','"+miEmpleado.getRol()+"')";
 		
 		try
 		{
@@ -84,10 +67,7 @@ public class CreateEmployeesServlet extends HttpServlet {
 			if (nRegistros>0)
 			{
 				response.getWriter().write("succes");
-			}	
-			
-			
-			 
+			}		 
 		}
 		catch (Exception e)
 		{ 

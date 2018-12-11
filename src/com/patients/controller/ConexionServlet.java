@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.LinkedList;
@@ -40,34 +41,38 @@ public class ConexionServlet extends HttpServlet
 		Receta receta=new Receta();
 		LinkedList<consulta> listaConsultas = new LinkedList<consulta>();
 		
-		//datos de acceso
+		//Creacion del props
 		Properties props=new Properties();
 		String propNombreArchivo = "sql.properties";
+		
 		InputStream input=null;
 		input=getClass().getClassLoader().getResourceAsStream(propNombreArchivo);
 		props.load(input);
-		String url=props.getProperty("url");
-		String username=props.getProperty("username");
-		String password=props.getProperty("password");
+		
+		//Obtencion de las sentencias del "sql.properties"
+		String propUrl=props.getProperty("url");
+		String propUsername=props.getProperty("username");
+		String propPassword=props.getProperty("password");
+		String propDriver=props.getProperty("driver");
+		String propSentenciaSQL=props.getProperty("sentenciaSQL");
 		
 		
 		//Creacion de objetos de la conexion a la base de datos
 		Connection conn=null;
-		Statement stmnt=null;
+		PreparedStatement pstmnt=null;
 		ResultSet datos=null;
 		String cadena="nbwabjk";
-		String sentenciaSQL="select * from pacientes as P, consultas as C, recetas as R where P.idPaciente = C.idPaciente and R.idReceta = C.idReceta";
 		
 		System.out.println(cadena);
 		
 		
 		try
 		{
-			Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-			conn=DriverManager.getConnection(url, username, password);
+			Class.forName(propDriver).getDeclaredConstructor().newInstance();
+			conn=DriverManager.getConnection(propUrl, propUsername, propPassword);
 			System.out.println("conexion!");
-			stmnt=conn.createStatement();
-			datos=stmnt.executeQuery(sentenciaSQL);
+			pstmnt=conn.prepareStatement(propSentenciaSQL);
+			datos=pstmnt.executeQuery();
 			
 			
 			while(datos.next())
@@ -113,7 +118,7 @@ public class ConexionServlet extends HttpServlet
 			try
 			{
 				datos.close();
-				stmnt.close();
+				pstmnt.close();
 				conn.close();
 			}
 			catch(Exception el)

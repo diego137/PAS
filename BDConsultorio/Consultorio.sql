@@ -26,13 +26,15 @@ create table Empleados
 );
 
 insert into Empleados (idEmpleados,Nombre,Apellidos,Curp,usuarioLog,Contrasena,Rol)
-values (0,null,null,null,null,null,null);
+values (default,null,null,null,null,null,null);
 
 
 
 drop table empleados;
 select * from Empleados;
 delete from Empleados;
+select idEmpleados from Empleados where idEmpleados = LAST_INSERT_ID();
+
 
 delete from Empleados where idEmpleados=0;
 

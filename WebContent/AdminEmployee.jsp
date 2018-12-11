@@ -99,6 +99,7 @@
 				<td><%=datos.getString("Rol") %></td>		
 				<td>
 					<%int idUsuario = datos.getInt("idEmpleados"); %>
+					<!-- Lapiz -->
                    <a href="#editEmployeeModal" class="edit" data-toggle="modal" data-whatever=
                    <%=                   datos.getInt("idEmpleados")+"@"
                    						+datos.getString("Nombre")+"@"
@@ -233,11 +234,11 @@
 			</div>
 		</div>
 	</div>
-	<!-- Edit Modal HTML -->
+	<!-- Edit Modal HTML ********************************************************************************-->
 	<div id="editEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form>
+				<form action="UpdateEmployeeServlet" id="frmUpdate" method="post">
 					<div class="modal-header">						
 						<h4 class="modal-title">Edit Employee</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -245,22 +246,22 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>ID Employee</label>
-							<input type="text" id="txtIdM" name="txtId" value=<%=request.getAttribute("txtId") %> class="form-control" required>
+							<input type="text" id="txtId" name="txtId" value=<%=request.getAttribute("txtId") %> class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Name</label>
-							<input type="text" id="txtNombreM" name="txtNombre" class="form-control" required>
+							<input type="text" id="txtNom" name="txtNom" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Last Name</label>
-							<input type="text" id="txtApellidosM" name="txtApellidos" class="form-control" required>
+							<input type="text" id="txtApellidos" name="txtApellidos" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>CURP</label>
-							<input type="text" id="txtCurpM" name="txtCurp" class="form-control" required>
+							<input type="text" id="txtCurp" name="txtCurp" class="form-control" required>
 						</div>
 						<div class="form-group">
-						<select id="txtRolM" name="txtRol" class="form-control">
+						<select id="txtRol" name="txtRol" class="form-control">
 						  <option value="DOCTOR">DOCTOR</option>
 						  <option value="NURSE">NURSE</option>
 						</select>

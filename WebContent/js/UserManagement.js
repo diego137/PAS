@@ -6,8 +6,14 @@ $(document).ready(function(){
 	
 document.getElementById('btnAdd').addEventListener("click",CrearEmpleado);
 document.getElementById('txtCurp').addEventListener("keyup",CopiarEntradas);
+document.getElementById('btnBuscarTodos').addEventListener("click",BuscarTodos);
 document.getElementById('txtNombreM').addEventListener("input",hacer);
 document.getElementById('txtApellidosM').addEventListener("input",hacer);
+
+function BuscarTodos()
+{
+	window.location.replace("AdminEmployee.jsp");
+}
 
 function hacer(){
 	$('#editEmployeeModal').find('.modal-title').text($('#txtNombreM').val()+" "+$('#txtApellidosM').val());
@@ -109,7 +115,7 @@ function CrearEmpleado()
 		  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 		  var modal = $(this)
 		  modal.find('.modal-title').text(arreglo[1]+" "+arreglo[2])
-		  modal.find('.modal-body').find('input[id="txtIdM"]').prop('disabled',true).val(arreglo[0]);
+		  modal.find('.modal-body').find('input[id="txtIdM"]').val(arreglo[0]);
 		  modal.find('.modal-body').find('input[id="txtNombreM"]').val(arreglo[1]);
 		  modal.find('.modal-body').find('input[id="txtApellidosM"]').val(arreglo[2]);
 		  modal.find('.modal-body').find('input[id="txtCurpM"]').val(arreglo[3]);

@@ -33,14 +33,36 @@
 					</div>
 					
 					<form action="SearchEmployeeServlet" method="POST">
-					<div class="col-sm-4 col-md-4 col-lg-3 form-inline ">
-					    <input id="txtBusqueda" type="number" class="form-control" placeholder="Search by Id" name="txtBusqueda" required>
-					    <input type="submit" id="btnBuscar" name="btnBuscar" class="btn btn-info" value="Buscar">
+					<div class="col-sm-4 col-md-4 col-lg-3  ">
+					    <!-- <input id="txtBusqueda" type="number" class="form-control" placeholder="Search by Id" name="txtBusqueda" required>
+					    <input type="button" id="btnBuscarTodos"  class="btn btn-info" value="Search All">
+					    <input type="submit" id="btnBuscar" name="btnBuscar" class="btn btn-info" value="Search">-->
+					    <div class="row">
+					    	<div class="col-sm-12 col-md-12">
+					    		<input id="txtBusqueda" type="number" class="form-control" placeholder="Search by Id" name="txtBusqueda" required>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-sm-6 col-md-6">
+					    		<input type="button" id="btnBuscarTodos"  class="btn btn-info btn-block" value="Search All">
+					    	</div>
+					    	<div class="col-sm-6 col-md-6">
+					    		<input type="submit" id="btnBuscar" name="btnBuscar" class="btn btn-info btn-block" value="Search">
+					    	</div>
+					    </div>
 					</div>
 					</form>
 					<div class="col-sm-4 col-md-4 col-lg-3 "  >
-						<a href="#addEmployeeModal" id="btnAddNew" class="btn btn-success form-control" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
-						<a href="#deleteEmployeeModal" id="btnDeleteNew"class="btn btn-danger form-control" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete Employee</span></a>						
+						 <div class="row">
+							 <div class="col-sm-12 col-md-12">
+							 	<a href="#addEmployeeModal" id="btnAddNew" class="btn btn-success btn-block " data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
+							 </div>
+						 </div>
+						 <div class="row">
+							 <div class="col-sm-12 col-md-12">
+							 	<a href="#deleteEmployeeModal" id="btnDeleteNew"class="btn btn-danger btn-block" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete Employee</span></a>
+							 </div>
+						 </div>						
 					</div>
 					
                 </div>
@@ -166,18 +188,7 @@
 	<%--TERMINA CONECCION A BASE DE DATOS CON SCRIPLET PARA MOSTRARLOS EN ESTE JSP --%> 
              
             </table>
-			<div class="clearfix">
-                <div class="hint-text">El pagination no <b>Jala</b> Ni pedo <b>No</b> ps chido</div>
-                <ul class="pagination">
-                    <li class="page-item disabled"><a href="#">Previous</a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                </ul>
-            </div>
+			
         </div>
     </div>
    </section>
@@ -238,19 +249,19 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>ID Employee</label>
-							<input type="text" id="txtId" name="txtId" value=<%=request.getAttribute("txtId") %> class="form-control" required>
+							<input type="text" id="txtIdM" name="txtIdM"  class="form-control" required readonly>
 						</div>
 						<div class="form-group">
 							<label>Name</label>
-							<input type="text" id="txtNom" name="txtNom" class="form-control" required>
+							<input type="text" id="txtNombreM" name="txtNom" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Last Name</label>
-							<input type="text" id="txtApellidos" name="txtApellidos" class="form-control" required>
+							<input type="text" id="txtApellidosM" name="txtApellidos" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>CURP</label>
-							<input type="text" id="txtCurp" name="txtCurp" class="form-control" required>
+							<input type="text" id="txtCurpM" name="txtCurp" class="form-control" required onkeyup="this.value = this.value.toUpperCase();">
 						</div>
 						<div class="form-group">
 						<select id="txtRol" name="txtRol" class="form-control">

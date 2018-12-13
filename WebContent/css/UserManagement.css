@@ -15,19 +15,14 @@
 	
 
 	#txtBusqueda{
-		margin: 3px;
-	 color: black;  }
-	 #btnAddNew
-	 {
-	margin: 3px;
+		margin-bottom: 3px;
+		margin-top: 3px; 
+		border-radius: 10px  
 	 }
-	  #btnDeleteNew
+	  #btnBuscar, #btnBuscarTodos, #btnDeleteNew, #btnAddNew
 	 {
 	margin: 3px;
-	 }
-	  #btnBuscar
-	 {
-	margin: 3px;
+	 border-radius: 10px 
 	 }
 	
 	.table-wrapper {

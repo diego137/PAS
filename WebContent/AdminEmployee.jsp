@@ -109,7 +109,7 @@
                 <tr>
 				 <td>
 				  <span class="custom-checkbox">
-					<input type="checkbox" id="checkbox1" name="options[]" value="1">
+					<input type="checkbox" id="checkbox1" name="options" value=<%=datos.getInt("idEmpleados") %>>
 					<label for="checkbox1"></label>
 				  </span>
 				<td><%=datos.getInt("idEmpleados") %></td>
@@ -145,7 +145,7 @@
         <tr>
 		 <td>
 		  <span class="custom-checkbox">
-			<input type="checkbox" id="checkbox1" name="options[]" value="1">
+			<input type="checkbox" id="checkbox1" name="options" value=<%=request.getAttribute("txtId") %>>
 			<label for="checkbox1"></label>
 		  </span>
 		<td><%=request.getAttribute("txtId")%></td>

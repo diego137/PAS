@@ -15,9 +15,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/jquery.sweet-modal.min.css">
 <link rel="stylesheet" href="css/UserManagement.css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/jquery.sweet-modal.min.js"></script>
 <script src="js/sweetalert2.all.min.js"></script>
 <script src="js/UserManagement.js"></script>
 
@@ -109,7 +112,7 @@
                 <tr>
 				 <td>
 				  <span class="custom-checkbox">
-					<input type="checkbox" id="checkbox1" name="options" value=<%=datos.getInt("idEmpleados") %>>
+					<input type="checkbox" id="checkbox1" name="options" class="paraEliminar" value=<%=datos.getInt("idEmpleados") %>>
 					<label for="checkbox1"></label>
 				  </span>
 				<td><%=datos.getInt("idEmpleados") %></td>
@@ -293,7 +296,7 @@
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-danger" value="Delete">
+						<input id="btnDeleteRecords" type="button" class="btn btn-danger" value="Delete">
 					</div>
 				</form>
 			</div>

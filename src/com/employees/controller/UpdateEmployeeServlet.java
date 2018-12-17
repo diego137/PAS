@@ -29,8 +29,6 @@ public class UpdateEmployeeServlet extends HttpServlet {
 		Employees miEmployee = new Employees();
 		//obtenemos los datos
 		miEmployee.setIdEmployee(Integer.parseInt(request.getParameter("txtIdM")));
-		System.out.println("Valor txtIdM:"+request.getParameter("txtIdM") );
-		System.out.println("Valor nombre:"+request.getParameter("txtRol") );
 		miEmployee.setName(request.getParameter("txtNom"));
 		miEmployee.setLastName(request.getParameter("txtApellidos"));
 		miEmployee.setRol(request.getParameter("txtRol"));

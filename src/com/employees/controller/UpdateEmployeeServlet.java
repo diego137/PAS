@@ -36,16 +36,21 @@ public class UpdateEmployeeServlet extends HttpServlet {
 		//salida.println("Datos:"+miEmployee.toString());
 		//Generamos el props
 		Properties props = new Properties();
-		String propNombreArchivo = "sql.properties";
+		String propNombreArchivo = "config.properties";
 		InputStream input = null;
 		input = getClass().getClassLoader().getResourceAsStream(propNombreArchivo);
 		props.load(input);
 		
 		//props 
-		String propiedadurlServidor = props.getProperty("url");
-		String propiedadmiUsuario = props.getProperty("username");
+		String propiedadurlServidor = props.getProperty("miUrl");
+		String propiedadmiUsuario = props.getProperty("user");
 		String propiedadmiPassword = props.getProperty("password");
-		String propiedadmiDriver = props.getProperty("driver");
+		String propiedadmiDriver = props.getProperty("Driver");
+		
+		propNombreArchivo = "sql.properties";
+		input = getClass().getClassLoader().getResourceAsStream(propNombreArchivo);
+		props.load(input);
+		
 		String UpdateEmployee = props.getProperty("SQLUpdateEmployee");
 		/*salida.println(" "+"Servidor"+propiedadurlServidor);
 		salida.println(" "+"UserName"+propiedadmiUsuario);

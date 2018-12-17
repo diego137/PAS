@@ -46,17 +46,22 @@ public class ConexionServlet extends HttpServlet
 		
 		//Creacion del props
 		Properties props=new Properties();
-		String propNombreArchivo = "sql.properties";
+		String propNombreArchivo = "config.properties";
 		
 		InputStream input=null;
 		input=getClass().getClassLoader().getResourceAsStream(propNombreArchivo);
 		props.load(input);
 		
 		//Obtencion de las sentencias del "sql.properties"
-		String propUrl=props.getProperty("url");
-		String propUsername=props.getProperty("username");
+		String propUrl=props.getProperty("miUrl");
+		String propUsername=props.getProperty("user");
 		String propPassword=props.getProperty("password");
-		String propDriver=props.getProperty("driver");
+		String propDriver=props.getProperty("Driver");
+		
+		propNombreArchivo = "sql.properties";
+		input=getClass().getClassLoader().getResourceAsStream(propNombreArchivo);
+		props.load(input);
+		
 		String propSentenciaSQL=props.getProperty("sentenciaSQL");
 		
 		

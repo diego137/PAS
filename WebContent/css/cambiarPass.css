@@ -1,0 +1,36 @@
+body{
+	overflow: hidden;
+}
+
+#bg{
+	background: url('../img/bg-banner.jpg') no-repeat fixed;
+	background-size: cover;
+	min-height: 670px;
+	position: relative;
+}
+
+#bg-color{
+	background-color: RGBA(13, 70, 83, 0.78);
+	min-height: 670px;
+}
+
+h1, #dP, #dPR{
+	color:white;
+}
+
+#imgSecure{
+	height: 150px;
+}
+
+#imgMal{
+	height: 40px;
+	display: none;
+}
+
+#lblLogin{
+	display: none;
+}
+
+#dRol, #dCurp, #dId{
+	display: none;
+}

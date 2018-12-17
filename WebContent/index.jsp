@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -491,9 +491,10 @@
   </footer>
   <!--/ footer-->
   
-  <div id="id01" class="modal">
+
+    <div id="id01" class="modal">
   
-  <form class="modal-content animate form-group" action="/action_page.php">
+  <form class="modal-content animate form-group" method="POST" action="LogIn">
     <div class="imgcontainer">
       <span id="closeLogin" class="close" title="Close">&times;</span>
       <img src="img/doctor.png" alt="Avatar" class="avatar">
@@ -506,7 +507,7 @@
       <label for="txtPassword"><b>Password</b></label>
       <input id="txtPassword" name="txtPassword" type="password" placeholder="Enter Password" class="inputLogin form-control" required>
         
-      <button type="submit" class="btnLogin">Login</button>
+      <button id="btnEntrar" type="button" class="btnLogin">Login</button>
 
     </div>
 

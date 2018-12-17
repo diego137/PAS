@@ -52,9 +52,6 @@ public class UpdateEmployeePasswordServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html, charset='UTF-8'");
 		PrintWriter salida = response.getWriter();
-		//salida.println("Estas en el Servlet Update Password");
-		//salida.println("Id: "+request.getParameter("txtId"));
-		//salida.println("Password: "+request.getParameter("txtPassword"));
 		
 		Employees miEmp = new Employees();
 		

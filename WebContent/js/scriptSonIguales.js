@@ -6,21 +6,6 @@ window.onload = function(){
 	document.getElementById("txtPasswordR").addEventListener("focus",Ocultar);
 }
 
-/*function comparar(){
-	var txtPassword = document.getElementById("txtPassword").value;
-	var txtCurp = document.getElementById("txtCurp").value;
-	
-	if(txtPassword == "<%=miEmployee.getCurp()%>"){
-		$.sweetModal({
-			content: 'La contrasena nueva es identica a la actual',
-			icon: $.sweetModal.ICON_WARNING
-		});
-		document.getElementById("txtPassword").value='';
-	}else{
-		alert("No iguales");
-	}
-}*/
-
 function SonIguales(){
 	var txtPassword = document.getElementById("txtPassword").value;
 	var txtPasswordR = document.getElementById("txtPasswordR").value;
@@ -29,7 +14,6 @@ function SonIguales(){
 	var form = new FormData;
 	
 	if(txtPassword=='' || txtPasswordR==''){
-		//alert("No se permiten valores vacios");
 		
 		$.sweetModal({
 			content: 'Alguno de los campos esta vacio',
@@ -39,7 +23,7 @@ function SonIguales(){
 
 	}else{
 		if((txtPassword == txtPasswordR) && (txtCurp.toUpperCase() != txtPassword.toUpperCase())){
-			//alert("Todo chido"+txtPassword.toUpperCase());
+
 			var rol = document.getElementById("txtRol").value;
 			var id = document.getElementById("txtId").value;
 			
@@ -75,8 +59,6 @@ function SonIguales(){
 				xhr.onload = function(){
 					esto = new String(xhr.responseText);
 					esto = xhr.response;
-					
-					console.log(esto);
 					
 					location.href="ConexionServlet?id="+esto;
 					

@@ -1,30 +1,5 @@
 var xhr = new XMLHttpRequest();
 
-/*$(document).ready(function(){
-	
-	//Buttons
-	$("#btn-Mostrar").on("click",funcionMostrar);
-	$("#cancelarLogin").on("click",funcionOcultarLogin);
-	$("#closeLogin").on("click",funcionOcultarLogin);
-	$("#btnEntrar").on("click",funcionLogear);
-	
-	//Get the modal
-	var modal = $("#id01");
-	
-	function funcionMostrar(){
-		$("#id01").show();
-	}
-	
-	function funcionOcultarLogin(){
-		$("#id01").hide();
-	}
-	
-	$(body).click(function(){
-		modal.hide();
-	});
-	
-});*/
-
 window.onload = function(){
 	
 	//Botones
@@ -61,9 +36,6 @@ function funcionLogear(){
 	myForm.append("txtUser",user);
 	myForm.append("txtPassword",password);
 	
-	console.log("Password de js: "+password);
-	console.log("User de js: "+user);
-	
 	xhr.open("POST","LogIn");
 	
 	xhr.onload = () => {
@@ -71,8 +43,7 @@ function funcionLogear(){
 		esto = new String(xhr.responseText);
 		
 		if(esto.indexOf("@")>-1){
-			console.log(xhr.response);
-			//location.href="cambiarPass.jsp?idEmpleado="+xhr.response;
+			
 			var div1 = esto.split("@");
 			var id = div1[0];
 			var curp = div1[1].split("/")[0];
@@ -87,7 +58,6 @@ function funcionLogear(){
 		}else if(esto.indexOf("ADMINISTRATOR")>-1){
 			location.href="AdminEmployee.jsp";
 		}else{
-			console.log("Entra otro AJAX");
 
 			xhr.open("POST","LogInPatientServlet");
 			xhr.onload = () => {
@@ -110,31 +80,9 @@ function funcionLogear(){
 						theme: $.sweetModal.THEME_MIXED
 					});
 				}
-				//console.log(texto);
 			}
 			xhr.send(myForm);
-			/*$.sweetModal({
-				content: 'The User or Password is Incorrect',
-				icon: $.sweetModal.ICON_ERROR,
-				theme: $.sweetModal.THEME_MIXED
-			});*/
 		}
-		
-		/*if(esto.indexOf("DOCTOR")>-1){
-			location.href="PrincipalDoctor.jsp";
-		}
-		
-		if(esto.indexOf("NURSE")>-1){
-			location.href="PrincipalNurse.jsp";
-		}
-		
-		if(esto.indexOf("Error")>-1){
-			$.sweetModal({
-				content: 'The User or Password is Incorrect',
-				icon: $.sweetModal.ICON_ERROR,
-				theme: $.sweetModal.THEME_MIXED
-			});
-		}*/
 		
 	}
 	

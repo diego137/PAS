@@ -60,8 +60,6 @@ public class LogInPatientServlet extends HttpServlet {
 		
 		String sentenciaSQL = props.getProperty("loginPatients");
 		
-		System.out.println("Entra Servlet Patients");
-		
 		Connection conn = null;
 		PreparedStatement pstmnt = null;
 		ResultSet datos = null;

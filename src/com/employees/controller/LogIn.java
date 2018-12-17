@@ -46,9 +46,6 @@ public class LogIn extends HttpServlet {
 		
 		emp.setPassword(request.getParameter("txtPassword"));
 		emp.setUser(request.getParameter("txtUser"));
-		System.out.println("Pass servlet: "+request.getParameter("txtPassword"));
-		System.out.println("User servlet: "+request.getParameter("txtUser"));
-		System.out.println("Aqui es el servlet: "+emp.toString());
 		
 		Properties props = new Properties();
 		InputStream input = null;
@@ -92,9 +89,7 @@ public class LogIn extends HttpServlet {
 			System.out.println(emp.toString());
 			if(existLog) {
 				if(emp.isFirstTime()) {
-					//salida.println("Es primera vez");
-					//request.setAttribute("miEmpleado", emp);
-					//request.getRequestDispatcher("WEB-INF/cambiarPass.jsp").forward(request, response);
+
 					salida.println(emp.getIdEmployee()+"@"+emp.getCurp()+"/"+emp.getRol());
 					System.out.println("Salida cadena: "+emp.getIdEmployee()+"@"+emp.getCurp()+"/"+emp.getRol());
 				}else {
@@ -102,8 +97,6 @@ public class LogIn extends HttpServlet {
 				}
 			}else {
 				salida.println("error");
-				//request.setAttribute("exist", "0");
-				//request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 			
 		}catch(Exception e) {

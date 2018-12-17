@@ -86,20 +86,6 @@ public class ConexionServlet extends HttpServlet
 			
 			while(datos.next())
 			{
-				/*salida.println("<br>");
-				salida.println("Id Consulta: "+datos.getInt("idConsulta"));
-				salida.println("<br>");
-				salida.println("Id Paciente: "+datos.getInt("idPaciente"));
-				salida.println("<br>");
-				salida.println("Id Receta: "+datos.getInt("idReceta"));
-				salida.println("<br>");
-				salida.println("Fecha: "+datos.getString("fecha"));
-				salida.println("<br>");
-				salida.println("Peso: "+datos.getString("peso"));
-				salida.println("<br>");
-				salida.println("Edad: "+datos.getInt("edad"));
-				salida.println("<br>");
-				salida.println("<br>");*/
 				isNull=false;
 				consulta.setIdConsulta(datos.getInt("idConsulta"));
 				consulta.setIdPaciente(datos.getInt("idPaciente"));
@@ -111,7 +97,7 @@ public class ConexionServlet extends HttpServlet
 				receta.setDescripcion(datos.getString("descripcion"));
 				consulta.setReceta(receta);
 				cadena+=consulta.toCard();
-				//listaConsultas.add(consulta);
+
 			}
 			
 			if(isNull)

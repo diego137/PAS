@@ -39,6 +39,9 @@ public class ConexionServlet extends HttpServlet
 		PrintWriter salida=response.getWriter();
 		consulta consulta= new consulta();
 		Receta receta=new Receta();
+		
+		int idPaciente=Integer.parseInt(request.getParameter("id"));
+		
 		LinkedList<consulta> listaConsultas = new LinkedList<consulta>();
 		
 		//Creacion del props
@@ -61,8 +64,8 @@ public class ConexionServlet extends HttpServlet
 		Connection conn=null;
 		PreparedStatement pstmnt=null;
 		ResultSet datos=null;
-		String cadena="nbwabjk";
-		
+		String cadena="";
+		boolean isNull=true;
 		System.out.println(cadena);
 		
 		
@@ -72,6 +75,7 @@ public class ConexionServlet extends HttpServlet
 			conn=DriverManager.getConnection(propUrl, propUsername, propPassword);
 			System.out.println("conexion!");
 			pstmnt=conn.prepareStatement(propSentenciaSQL);
+			pstmnt.setInt(1, idPaciente);
 			datos=pstmnt.executeQuery();
 			
 			
@@ -91,6 +95,7 @@ public class ConexionServlet extends HttpServlet
 				salida.println("Edad: "+datos.getInt("edad"));
 				salida.println("<br>");
 				salida.println("<br>");*/
+				isNull=false;
 				consulta.setIdConsulta(datos.getInt("idConsulta"));
 				consulta.setIdPaciente(datos.getInt("idPaciente"));
 				consulta.setFecha(datos.getString("fecha"));
@@ -104,6 +109,10 @@ public class ConexionServlet extends HttpServlet
 				//listaConsultas.add(consulta);
 			}
 			
+			if(isNull)
+			{
+				cadena=null;
+			}
 			
 			request.setAttribute("card", cadena);
 			RequestDispatcher rd=request.getRequestDispatcher("consulta.jsp");  

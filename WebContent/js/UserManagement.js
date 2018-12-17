@@ -1,5 +1,6 @@
 
 var xhr = new XMLHttpRequest();
+
 $(document).ready(function(){
 	// Activate tooltip
 	$('[data-toggle="tooltip"]').tooltip();
@@ -9,6 +10,66 @@ document.getElementById('txtCurp').addEventListener("keyup",CopiarEntradas);
 document.getElementById('btnBuscarTodos').addEventListener("click",BuscarTodos);
 document.getElementById('txtNombreM').addEventListener("input",hacer);
 document.getElementById('txtApellidosM').addEventListener("input",hacer);
+document.getElementById('btnDeleteRecords').addEventListener("click",eliminarMuchos);
+
+
+function eliminarMuchos(){
+	
+	var checkArray = [];
+	var checks = document.getElementsByClassName("paraEliminar");
+	var j=0;
+	for(var i = 0 ; i <= checks.length-1; i++){
+		if(checks[i].checked){
+			checkArray[j] = checks[i].value;
+			j++;
+		}
+	}
+	
+	if(checkArray.length>0){
+		var miFormita = new FormData();
+		
+		miFormita.append("cajas",checkArray);
+		
+		xhr.open("POST","DeleteCheckBoxServlet",true);
+		
+		xhr.onload=()=>{
+			console.log(xhr.response);
+			var respuesta = parseInt(xhr.response);
+			if(respuesta==0){
+				$.sweetModal({
+					content: "No record was deleted",
+					icon: $.sweetModal.ICON_ERROR
+				});
+				window.location.replace("AdminEmployee.jsp");
+			}else if(respuesta == 1){
+				
+				$("#deleteEmployeeModal").modal("hide");
+				
+				$.sweetModal.confirm('SUCCESS', 'A record was deleted', function() {
+					window.location.replace("AdminEmployee.jsp");
+				}, function() {
+					window.location.replace("AdminEmployee.jsp");
+				});
+				
+			}else{
+				$("#deleteEmployeeModal").modal("hide");
+			
+				$.sweetModal.confirm('SUCCESS', respuesta+" records were deleted", function() {
+					window.location.replace("AdminEmployee.jsp");
+				}, function() {
+					window.location.replace("AdminEmployee.jsp");
+				});
+			}
+		}
+		
+		xhr.send(miFormita);
+	}else{
+		window.location.replace("AdminEmployee.jsp");
+	}
+	/*for(var i = 0 ; i < checkArray.length; i++){
+		console.log("Valores Checados: "+checkArray[i]);
+	}*/
+}
 
 function BuscarTodos()
 {
@@ -123,8 +184,6 @@ function CrearEmpleado()
 		})
 	
 });
-
-
 
 
 

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -371,7 +372,7 @@
         </div>
         <div class="col-md-4 col-sm-5">
            "My greaest students of the all, very profesionals, pro-active and responsables, hard-work, and team work, the deserve a 100"
-          <p class="text-right text-primary"><i>â Osacar Santana Generation</i></p>
+          <p class="text-right text-primary"><i>Oscar Santana Generation</i></p>
         </div>
         <div class="col-md-2"></div>
       </div>
@@ -474,7 +475,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            Â© Copyright Medi-kidsTheme. All Rights Reserved
+            Copyright Medi-kidsTheme. All Rights Reserved
             <div class="credits">
               <!--
                 All the links in the footer should remain intact.

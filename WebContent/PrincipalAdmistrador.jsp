@@ -27,11 +27,15 @@
               <div id="nombre">
        <div class="col-md-1"></div>
         <div class="col-md-4 text-center row align-items-center"> 
-           <button id="singlebutton" name="singlebutton" class="btn btn-primary btn-lg btn-block btn-glass">Medical Crew</button>          
+           <a href="AdminEmployee.jsp">
+           <button id="singlebutton" name="singlebutton" class="btn btn-primary btn-lg btn-block btn-glass">Medical Crew</button>
     </div>
+   
     <div class="col-md-2"></div>
     <div class="col-md-4 text-center row align-items-center"> 
+     <a href="AdminPatient.jsp">
     <button id="singlebutton" name="singlebutton" class="btn btn-primary btn-lg btn-block btn-glass">patient</button>
+    
     </div>
 
 </div>

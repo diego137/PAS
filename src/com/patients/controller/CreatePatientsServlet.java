@@ -1,5 +1,6 @@
 package com.patients.controller;
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -14,7 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.patients.model.Patients;
+import com.patients.model.Patient;
+
 
 @WebServlet("/CreatePatientsServlet")
 @MultipartConfig
@@ -42,11 +44,11 @@ public class CreatePatientsServlet extends HttpServlet {
 				response.getWriter().write("vacioContrasena");
 		
 		else {
-        miPaciente.setName(request.getParameter("txtNombre"));
-		miPaciente.setLastName(request.getParameter("txtApellidos" ));
-		miPaciente.setCurp(request.getParameter("txtCurp"));
-		miPaciente.setUser(request.getParameter("txtUsuario"));
-		miPaciente.setPassword(request.getParameter("txtContrasena"));
+        miPaciente.setNombrePaciente(request.getParameter("txtNombre"));
+		miPaciente.setApellidosPaciente(request.getParameter("txtApellidos" ));
+		miPaciente.setCurpPaciente(request.getParameter("txtCurp"));
+		miPaciente.setUsuarioPaciente(request.getParameter("txtUsuario"));
+		miPaciente.setPasswordPaciente(request.getParameter("txtContrasena"));
 		
 		
 		String miUrl="jdbc:mysql://localhost:3306/Consultorio?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -54,7 +56,7 @@ public class CreatePatientsServlet extends HttpServlet {
 		String miPassword="root";	
 		Connection conn = null;
 		Statement stmnt = null;
-		String setencialSQL="insert into Empleados (idEmpleados,Nombre,Apellidos,Curp,usuarioLog,Contrasena,Rol) values(default,'"+miEmpleado.getName()+"','"+miEmpleado.getLastName()+ "','"+miEmpleado.getCurp()+"','"+miEmpleado.getUser()+"','"+miEmpleado.getPassword()+"','"+miEmpleado.getRol()+"')";
+		String setencialSQL="insert into Pacientes (idPaciente,nombrePaciente,apellidosPaciente,curpPaciente,usuarioPaciente,contrasenaPaciente) values(default,'"+miPaciente.getNombrePaciente()+"','"+miPaciente.getApellidosPaciente()+ "','"+miPaciente.getCurpPaciente()+"','"+miPaciente.getUsuarioPaciente()+"','"+miPaciente.getPasswordPaciente()+"')";
 		
 		try
 		{

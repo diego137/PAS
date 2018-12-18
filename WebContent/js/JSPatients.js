@@ -5,7 +5,7 @@ $(document).ready(function(){
 	// Activate tooltip
 	$('[data-toggle="tooltip"]').tooltip();
 	
-document.getElementById('btnAdd').addEventListener("click",CrearEmpleado);
+document.getElementById('btnAdd').addEventListener("click",CrearPaciente);
 document.getElementById('txtCurp').addEventListener("keyup",CopiarEntradas);
 document.getElementById('btnBuscarTodos').addEventListener("click",BuscarTodos);
 document.getElementById('txtNombreM').addEventListener("input",hacer);
@@ -30,7 +30,7 @@ function eliminarMuchos(){
 		
 		miFormita.append("cajas",checkArray);
 		
-		xhr.open("POST","DeleteCheckBoxServlet",true);
+		xhr.open("POST","DeleteCheckBoxPatientsServlet",true);
 		
 		xhr.onload=()=>{
 			console.log(xhr.response);
@@ -84,11 +84,11 @@ function hacer(){
 function CrearPaciente()
 {		  
 	//var id = document.getElementById('txtId').value;
-	var nombre = document.getElementById('txtNombre').value;
-	var apellido = document.getElementById('txtApellidos').value;
-	var curp = document.getElementById('txtCurp').value;
-	var usuario = document.getElementById('txtUsuario').value;
-	var contrasena = document.getElementById('txtContrasena').value;
+	var  nombrePaciente = document.getElementById('txtNombre').value;
+	var apellidosPaciente = document.getElementById('txtApellidos').value;
+	var curpPaciente = document.getElementById('txtCurp').value;
+	var usuarioPaciente = document.getElementById('txtUsuario').value;
+	var contrasenaPaciente = document.getElementById('txtContrasena').value;
 	
 
 	
@@ -96,7 +96,7 @@ function CrearPaciente()
 	$.ajax({ 
 	type: "POST", 
 	url: "CreatePatientsServlet", 
-	data: {txtNombre:nombre,txtApellidos:apellido,txtCurp:curp,txtUsuario:usuario,txtContrasena:contrasena,txtRol:rol}, 
+	data: {txtNombre:nombrePaciente,txtApellidos:apellidosPaciente,txtCurp:curpPaciente,txtUsuario:usuarioPaciente,txtContrasena:contrasenaPaciente}, 
 			//cuando la respuesta del servlet es exitosa
 			success: function(result){
 			

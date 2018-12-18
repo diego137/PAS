@@ -160,8 +160,15 @@
 		<td><%=request.getAttribute("txtRol") %></td>
 		
 		<td>
-           <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-           
+		<a href="#editEmployeeModal" class="edit" data-toggle="modal" data-whatever=
+		                   <%=                  datos.getInt("idEmpleados")+"@"
+		                   						+datos.getString("Nombre")+"@"
+		                   						+datos.getString("Apellidos")+"@"
+							                    +datos.getString("Curp")+"@"
+							                    +datos.getString("Rol")%>
+		                 	>
+		                   <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+		                   </a>           
            <a href=<%="/PAS/DeleteEmployeeServlet?idEmpleados="+ datos.getInt("idEmpleados")%> onclick="return confirm('Are you sure?')"class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
            
        </td>

@@ -22,7 +22,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/jquery.sweet-modal.min.js"></script>
 <script src="js/sweetalert2.all.min.js"></script>
-<script src="js/UserManagement.js"></script>
+<script src="js/JSPatients.js"></script>
 
 </head>
 <body>
@@ -35,7 +35,7 @@
 						<h2>Manage <b>Patients</b></h2>
 					</div>
 					
-					<form action="SearchEmployeeServlet" method="POST">
+					<form action="SearchPatientsServlet" method="POST">
 					<div class="col-sm-4 col-md-4 col-lg-3  ">
 					    <!-- <input id="txtBusqueda" type="number" class="form-control" placeholder="Search by Id" name="txtBusqueda" required>
 					    <input type="button" id="btnBuscarTodos"  class="btn btn-info" value="Search All">
@@ -58,12 +58,12 @@
 					<div class="col-sm-4 col-md-4 col-lg-3 "  >
 						 <div class="row">
 							 <div class="col-sm-12 col-md-12">
-							 	<a href="#addEmployeeModal" id="btnAddNew" class="btn btn-success btn-block " data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
+							 	<a href="#addEmployeeModal" id="btnAddNew" class="btn btn-success btn-block " data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Patient</span></a>
 							 </div>
 						 </div>
 						 <div class="row">
 							 <div class="col-sm-12 col-md-12">
-							 	<a href="#deleteEmployeeModal" id="btnDeleteNew"class="btn btn-danger btn-block" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete Employee</span></a>
+							 	<a href="#deleteEmployeeModal" id="btnDeleteNew"class="btn btn-danger btn-block" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete Patient</span></a>
 							 </div>
 						 </div>						
 					</div>
@@ -79,7 +79,7 @@
 								<label for="selectAll"></label>
 							</span>
 						</th>
-						<th>Id Employee</th>
+						<th>Id Patient</th>
                         <th>Name</th>
                         <th>Last Name</th>
 						<th>CURP</th>
@@ -132,14 +132,14 @@
                    >
                    <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
                    </a>
-                   <!-- <a href=<%="SearchEmployeeServlet?txtBusqueda="+datos.getInt("idPaciente")%> class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>-->
+                   <!-- <a href=<%="SearchPatientsServlet?txtBusqueda="+datos.getInt("idPaciente")%> class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>-->
                    <a onclick="return confirm('Are you sure?')" href=<%="/PAS/DeletePatientsServlet?idPaciente="+idUsuario%>  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                </td>
                     </tr>
                 </tbody>		
 		<% }
 		}else{
-		String sentenciaSQL = "select * from empleados where idEmpleados="+request.getAttribute("txtId");
+		String sentenciaSQL = "select * from Pacientes where idPaciente="+request.getAttribute("txtId");
 		datos = stmnt.executeQuery(sentenciaSQL);
 		datos.next();
 		{%><tbody>
@@ -199,7 +199,7 @@
 			<div class="modal-content">
 				<form>
 					<div class="modal-header">						
-						<h4 class="modal-title">Add Employee</h4>
+						<h4 class="modal-title">Add Patient</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">					
@@ -237,14 +237,14 @@
 	<div id="editEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="UpdateEmployeeServlet" id="frmUpdate" method="post">
+				<form action="UpdatePatientServlet" id="frmUpdate" method="post">
 					<div class="modal-header">						
-						<h4 class="modal-title">Edit Employee</h4>
+						<h4 class="modal-title">Edit Patient</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">					
 						<div class="form-group">
-							<label>ID Employee</label>
+							<label>ID Patient</label>
 							<input type="text" id="txtIdM" name="txtIdM"  class="form-control" required readonly>
 						</div>
 						<div class="form-group">
@@ -254,6 +254,10 @@
 						<div class="form-group">
 							<label>Last Name</label>
 							<input type="text" id="txtApellidosM" name="txtApellidos" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Curp</label>
+							<input type="text" id="txtApellidosM" name="txtCurp" class="form-control" required>
 						</div>
 												
 					</div>
@@ -271,7 +275,7 @@
 			<div class="modal-content">
 				<form>
 					<div class="modal-header">						
-						<h4 class="modal-title">Delete Employee</h4>
+						<h4 class="modal-title">Delete Patient</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">					

@@ -39,21 +39,29 @@ public class ConexionServlet extends HttpServlet
 		PrintWriter salida=response.getWriter();
 		consulta consulta= new consulta();
 		Receta receta=new Receta();
+		
+		int idPaciente=Integer.parseInt(request.getParameter("id"));
+		
 		LinkedList<consulta> listaConsultas = new LinkedList<consulta>();
 		
 		//Creacion del props
 		Properties props=new Properties();
-		String propNombreArchivo = "sql.properties";
+		String propNombreArchivo = "config.properties";
 		
 		InputStream input=null;
 		input=getClass().getClassLoader().getResourceAsStream(propNombreArchivo);
 		props.load(input);
 		
 		//Obtencion de las sentencias del "sql.properties"
-		String propUrl=props.getProperty("url");
-		String propUsername=props.getProperty("username");
+		String propUrl=props.getProperty("miUrl");
+		String propUsername=props.getProperty("user");
 		String propPassword=props.getProperty("password");
-		String propDriver=props.getProperty("driver");
+		String propDriver=props.getProperty("Driver");
+		
+		propNombreArchivo = "sql.properties";
+		input=getClass().getClassLoader().getResourceAsStream(propNombreArchivo);
+		props.load(input);
+		
 		String propSentenciaSQL=props.getProperty("sentenciaSQL");
 		
 		
@@ -61,8 +69,8 @@ public class ConexionServlet extends HttpServlet
 		Connection conn=null;
 		PreparedStatement pstmnt=null;
 		ResultSet datos=null;
-		String cadena="nbwabjk";
-		
+		String cadena="";
+		boolean isNull=true;
 		System.out.println(cadena);
 		
 		
@@ -72,25 +80,13 @@ public class ConexionServlet extends HttpServlet
 			conn=DriverManager.getConnection(propUrl, propUsername, propPassword);
 			System.out.println("conexion!");
 			pstmnt=conn.prepareStatement(propSentenciaSQL);
+			pstmnt.setInt(1, idPaciente);
 			datos=pstmnt.executeQuery();
 			
 			
 			while(datos.next())
 			{
-				/*salida.println("<br>");
-				salida.println("Id Consulta: "+datos.getInt("idConsulta"));
-				salida.println("<br>");
-				salida.println("Id Paciente: "+datos.getInt("idPaciente"));
-				salida.println("<br>");
-				salida.println("Id Receta: "+datos.getInt("idReceta"));
-				salida.println("<br>");
-				salida.println("Fecha: "+datos.getString("fecha"));
-				salida.println("<br>");
-				salida.println("Peso: "+datos.getString("peso"));
-				salida.println("<br>");
-				salida.println("Edad: "+datos.getInt("edad"));
-				salida.println("<br>");
-				salida.println("<br>");*/
+				isNull=false;
 				consulta.setIdConsulta(datos.getInt("idConsulta"));
 				consulta.setIdPaciente(datos.getInt("idPaciente"));
 				consulta.setFecha(datos.getString("fecha"));
@@ -101,9 +97,13 @@ public class ConexionServlet extends HttpServlet
 				receta.setDescripcion(datos.getString("descripcion"));
 				consulta.setReceta(receta);
 				cadena+=consulta.toCard();
-				//listaConsultas.add(consulta);
+
 			}
 			
+			if(isNull)
+			{
+				cadena=null;
+			}
 			
 			request.setAttribute("card", cadena);
 			RequestDispatcher rd=request.getRequestDispatcher("consulta.jsp");  

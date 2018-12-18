@@ -23,7 +23,7 @@ public class DeletePatientsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html charset=\"UTF-8\"");
 		PrintWriter out = response.getWriter();
-		int idPaciente = Integer.parseInt(request.getParameter("idEmpleados"));
+		int idPaciente = Integer.parseInt(request.getParameter("idPaciente"));
 		//salida.println(idEmpleado);
 		String miUrl="jdbc:mysql://localhost:3306/Consultorio?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String miUsuario="root";
@@ -44,7 +44,7 @@ public class DeletePatientsServlet extends HttpServlet {
 			out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>");
 			out.println("<script>");
 			out.println("$(document).ready(function(){");
-			out.println("Swal({ type:'success',title: 'Deleted!',text: 'Your user has been deleted!', onAfterClose: () => { setTimeout(() => location.href = 'AdminEmployee.jsp', 100);}});});");
+			out.println("Swal({ type:'success',title: 'Deleted!',text: 'Your user has been deleted!', onAfterClose: () => { setTimeout(() => location.href = 'AdminPatient.jsp', 100);}});});");
 		    out.println("</script>");
 			
 			}

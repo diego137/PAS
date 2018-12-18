@@ -60,7 +60,7 @@ function SonIguales(){
 					esto = new String(xhr.responseText);
 					esto = xhr.response;
 					
-					location.href="ConexionServlet?id="+esto;
+					location.href="consultasServletPatient?id="+esto;
 					
 				}
 				

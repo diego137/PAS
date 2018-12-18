@@ -1,4 +1,4 @@
-package com.patients.model;
+package com.consultas.model;
 
 public class Receta 
 {

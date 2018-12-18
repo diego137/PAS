@@ -72,7 +72,7 @@
 							
 							<td>	
 				                <a href=<%="ConexionServlet?id="+datos.getInt("idPaciente")%> class="show"><i class="material-icons" data-toggle="tooltip" title="Show">visibility</i></a>
-				                <a href="" class="add"><i class="material-icons" data-toggle="tooltip" title="Add">add_circle</i></a>
+				                <a href=<%="createConsulta.jsp?id="+datos.getInt("idPaciente") %> class="add"><i class="material-icons" data-toggle="tooltip" title="Add">add_circle</i></a>
 			                </td>
 		                </tr>
                 	</tbody>		

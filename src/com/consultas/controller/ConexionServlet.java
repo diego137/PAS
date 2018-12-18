@@ -1,4 +1,4 @@
-package com.patients.controller;
+package com.consultas.controller;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,8 +7,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.LinkedList;
 import java.util.Properties;
 
 import javax.servlet.RequestDispatcher;
@@ -18,8 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.patients.model.Receta;
-import com.patients.model.consulta;
+import com.consultas.model.Receta;
+import com.consultas.model.Consulta;
 
 
 @WebServlet("/ConexionServlet")
@@ -37,12 +35,10 @@ public class ConexionServlet extends HttpServlet
 	{
 		response.setContentType("text/html charset='UTF-8'");
 		PrintWriter salida=response.getWriter();
-		consulta consulta= new consulta();
+		Consulta consulta= new Consulta();
 		Receta receta=new Receta();
 		
 		int idPaciente=Integer.parseInt(request.getParameter("id"));
-		
-		LinkedList<consulta> listaConsultas = new LinkedList<consulta>();
 		
 		//Creacion del props
 		Properties props=new Properties();

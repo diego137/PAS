@@ -1,6 +1,6 @@
-package com.patients.model;
+package com.consultas.model;
 
-public class consulta 
+public class Consulta 
 {
 	private int idConsulta;
 	private int idPaciente;
@@ -10,7 +10,7 @@ public class consulta
 	private int edad;
 	private Receta miReceta;
 	
-	public consulta()
+	public Consulta()
 	{
 		
 	}
@@ -81,7 +81,7 @@ public class consulta
 	
 	public String toCard()
 	{
-		return "<div class='row'>"
+		return "<div class='row separado'></div><div class='row'>"
 				+"<div class=\"card cuerpoCard col-lg-12 mb-4\">"
 				+ "<header>"
 				+ 	"<h1 class='tituloCard'>Fecha "+getFecha()+"</h1>"

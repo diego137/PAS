@@ -21,13 +21,6 @@
                         </div>
 
                         <div id="mitad" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        	<div class="row">
-                        		<div class="col-sm-4 col-lg-4"></div>
-                        		<div class="col-sm-4 col-lg-4">
-                        			<input id="btnRegresar1" type="button" class="btn btn-danger btn-block" value="Regresar">
-                        		</div>
-                        		<div class="col-sm-4 col-lg-4"></div>
-                        	</div>
                         	
                             <div class="row pt-4">
                                 <div class="column col-lg-12">
@@ -45,14 +38,6 @@
                                     
                                 </div>
                             </div>
-                            
-                            <div class="row">
-                        		<div class="col-sm-4 col-lg-4"></div>
-                        		<div class="col-sm-4 col-lg-4">
-                        			<input id="btnRegresar2" type="button" class="btn btn-danger btn-block" value="Regresar">
-                        		</div>
-                        		<div class="col-sm-4 col-lg-4"></div>
-                        	</div>
                             
                         </div>
 

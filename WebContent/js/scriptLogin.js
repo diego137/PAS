@@ -72,7 +72,7 @@ function funcionLogear(){
 				}else if(texto.indexOf("-")>-1){
 					var array = texto.split("-");
 					var id = array[0];
-					location.href="ConexionServlet?id="+id;
+					location.href="consultasServletPatient?id="+id;
 				}else{
 					$.sweetModal({
 						content: 'The User or Password is Incorrect',

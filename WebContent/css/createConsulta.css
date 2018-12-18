@@ -1,0 +1,30 @@
+body{
+	color: white;
+}
+
+.miDiv{
+	margin-top: 2vh;
+}
+
+#bg
+{
+	background: url('../img/bg-banner.jpg') no-repeat fixed;
+	background-size: cover;
+	min-height: 670px;
+	position: relative;
+}
+
+#bg-color
+{
+	background-color: RGBA(13, 70, 83, 0.78);
+	min-height: 670px;
+}
+
+#txtIdDiv{
+	display: none;
+}
+
+#imgSecure{
+	height: 150px;
+}
+

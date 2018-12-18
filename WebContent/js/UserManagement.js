@@ -30,7 +30,7 @@ function eliminarMuchos(){
 		
 		miFormita.append("cajas",checkArray);
 		
-		xhr.open("POST","DeleteCheckBoxServlet",true);
+		xhr.open("POST","DeleteCheckBoxPatientsServlet",true);
 		
 		xhr.onload=()=>{
 			console.log(xhr.response);

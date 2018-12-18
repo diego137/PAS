@@ -45,13 +45,17 @@ public class DeleteCheckBoxServlet extends HttpServlet {
 		Properties props = new Properties();
 		InputStream input = null;
 		
+		input = getClass().getClassLoader().getResourceAsStream("config.properties");
+		props.load(input);
+		
+		String url = props.getProperty("miUrl");
+		String user = props.getProperty("user");
+		String password = props.getProperty("password");
+		String driver = props.getProperty("Driver");
+		
 		input = getClass().getClassLoader().getResourceAsStream("sql.properties");
 		props.load(input);
 		
-		String url = props.getProperty("url");
-		String user = props.getProperty("username");
-		String password = props.getProperty("password");
-		String driver = props.getProperty("driver");
 		String sentenciaSQL = props.getProperty("deleteByIdEmployee");
 		
 		Connection conn = null;

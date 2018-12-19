@@ -46,6 +46,8 @@ public class LogInPatientServlet extends HttpServlet {
 		myPatient.setUsuarioPaciente(request.getParameter("txtUser"));
 		myPatient.setPasswordPaciente(request.getParameter("txtPassword"));
 		
+		System.out.println(myPatient.toString());
+		
 		Properties props = new Properties();
 		InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");
 		props.load(input);
@@ -92,6 +94,7 @@ public class LogInPatientServlet extends HttpServlet {
 				}
 			}else {
 				salida.println("Error");
+				System.out.println("Aqui");
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -13,6 +13,7 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.sweet-modal.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/css.css">
   <link rel="stylesheet" type="text/css" href="css/login.css">
@@ -520,11 +521,15 @@
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.sweet-modal.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/custom.js"></script>
   <script src="contactform/contactform.js"></script>
+  
+  
   <script src="js/script.js"></script>
   <script src="js/scriptLogin.js"></script>
+  
 
 </body>
 

@@ -1,14 +1,15 @@
 create database consultorio;
 use consultorio;
 
-create table Pacientes 
-(
-	idPaciente int primary key not null AUTO_INCREMENT,
-    nombrePaciente varchar(15),
-    apellidosPaciente varchar(40),
-    curpPaciente varchar(30),
-    usuarioPaciente varchar(15),
-    contrasenaPaciente varchar(15)
+CREATE TABLE `pacientes` (
+  `idPaciente` int(11) NOT NULL auto_increment,
+  `nombrePaciente` varchar(40) DEFAULT NULL,
+  `apellidosPaciente` varchar(40) DEFAULT NULL,
+  `curpPaciente` varchar(30) DEFAULT NULL,
+  `usuarioPaciente` varchar(15) DEFAULT NULL,
+  `contrasenaPaciente` varchar(15) DEFAULT NULL,
+  `FirstTime` bit(1) DEFAULT b'1',
+  PRIMARY KEY (`idPaciente`)
 );
 
 create table Consultas
@@ -28,16 +29,16 @@ create table Recetas
     descripcion varchar(250)
 );
 
-create table Empleados 
-(
-	idEmpleados int primary key not null AUTO_INCREMENT,
-    Nombre varchar(30),
-    Apellidos varchar(30),
-    Curp varchar(30),
-    usuarioLog varchar(30),
-    Contrasena varchar(30),
-    Rol varchar(30),
-    FirsTime Bit (1)
+CREATE TABLE `empleados` (
+  `idEmpleados` int(11) NOT NULL auto_increment,
+  `Nombre` varchar(40) DEFAULT NULL,
+  `Apellidos` varchar(40) DEFAULT NULL,
+  `Curp` varchar(30) DEFAULT NULL,
+  `usuarioLog` varchar(15) DEFAULT NULL,
+  `Contrasena` varchar(15) DEFAULT NULL,
+  `Rol` varchar (40) DEFAULT NULL,
+  `FirstTime` bit(1) DEFAULT b'1',
+  PRIMARY KEY (`idEmpleados`)
 );
 
 #Prueba de insercion de datos

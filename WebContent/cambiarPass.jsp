@@ -94,7 +94,7 @@
 									<input id="txtPassword" name="txtPassword" type="password" placeholder = "Nueva Contraseña" class="form-control col-md-8" required>
 								
 							</div>
-							</p>
+						</p>
 						</div>						
 						
 						<div class="row">

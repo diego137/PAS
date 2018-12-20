@@ -13,7 +13,7 @@
  <body>
  
                 <div id="btn-gru" class="navbat-header btn-group nav-dark ">
-                        <button id="btn-gru" type="button" class="btn btn-primary btn-glass">Regresar</button>
+                        <button id="btnCerrar" type="button" class="btn btn-primary btn-glass">Cerrar Sesion</button>
                         <button id="btn-gru" type="button" class="btn btn-glass btn-success">Acerca de Nosotros</button>
                         <button id="btn-gru" type="button" class="btn btn-danger btn-glass">Contacto</button>
                   </div>
@@ -40,6 +40,8 @@
 
 </div>
 </div> 
+
+<script src="js/pAdmin.js"></script>
  </body>
  </html>
  

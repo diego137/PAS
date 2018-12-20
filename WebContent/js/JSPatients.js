@@ -11,7 +11,11 @@ document.getElementById('btnBuscarTodos').addEventListener("click",BuscarTodos);
 document.getElementById('txtNombreM').addEventListener("input",hacer);
 document.getElementById('txtApellidosM').addEventListener("input",hacer);
 document.getElementById('btnDeleteRecords').addEventListener("click",eliminarMuchos);
+document.getElementById('btnRegresar').addEventListener("click",regresar);
 
+function regresar(){
+	location.href="PrincipalAdmistrador.jsp";
+}
 
 function eliminarMuchos(){
 	

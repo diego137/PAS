@@ -8,6 +8,7 @@ window.onload = function(){
 	}
 	
 	function regresar(){
-		location.href="Doctores.jsp"
+		console.log("aqui");
+		location.href="Nurses.jsp"
 	}
 }

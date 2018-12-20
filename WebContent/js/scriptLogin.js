@@ -54,9 +54,9 @@ function funcionLogear(){
 		}else if(esto.indexOf("DOCTOR")>-1){
 			location.href="Doctores.jsp";
 		}else if(esto.indexOf("NURSE")>-1){
-			location.href="PrincipalNurse.jsp";
+			location.href="Nurses.jsp";
 		}else if(esto.indexOf("ADMINISTRATOR")>-1){
-			location.href="AdminEmployee.jsp";
+			location.href="PrincipalAdmistrador.jsp";
 		}else{
 
 			xhr.open("POST","LogInPatientServlet");

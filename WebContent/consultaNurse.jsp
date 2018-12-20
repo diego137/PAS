@@ -13,16 +13,16 @@
 <body>
     <div id="bg">
         <div id="bg-color">
-            <div class="content">
+            <div class="container m-0 p-0">
             
-            	<div class="row">
+            	<div class="row m-0 p-0">
 		    		<div class="col-sm-10 col-md-10 col-lg-10"></div>
 		    		<div class="col-sm-2 col-md-2 col-lg-2">
 		    			<input id="btnCerrar" type="button" class="btn btn-danger btn-block" value="Cerrar Session"/>
 		    		</div>    		
 		    	</div>
-            
-                <div class="container-fluid">
+		    	
+                <div class="container">
                     <div class="row">
                         <div id="izquierda" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                         
@@ -32,7 +32,7 @@
                         	<div class="row">
                         		<div class="col-sm-4 col-lg-4"></div>
                         		<div class="col-sm-4 col-lg-4">
-                        			<input id="btnRegresar1" type="button" class="btn btn-danger btn-block" value="Regresar">
+                        			<input id="btnRegresar1" type="button" class="btn btn-warning btn-block" value="Regresar">
                         		</div>
                         		<div class="col-sm-4 col-lg-4"></div>
                         	</div>
@@ -57,7 +57,7 @@
                             <div class="row">
                         		<div class="col-sm-4 col-lg-4"></div>
                         		<div class="col-sm-4 col-lg-4">
-                        			<input id="btnRegresar2" type="button" class="btn btn-danger btn-block" value="Regresar">
+                        			<input id="btnRegresar2" type="button" class="btn btn-warning btn-block" value="Regresar">
                         		</div>
                         		<div class="col-sm-4 col-lg-4"></div>
                         	</div>
@@ -78,6 +78,6 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/consulta.js"></script>
+    <script src="js/consultaNurse.js"></script>
 </body>
 </html>

@@ -28,6 +28,16 @@
 <body>
 <section id="banner" class="banner">
     <div class="container" >
+    	<div class="row">
+    		<div class="col-sm-8 col-md-8 col-lg-8"></div>
+    		<div class="col-sm-2 col-md-2 col-lg-2">
+    			<input id="btnRegresar" type="button" class="btn btn-warning btn-block" value="Regresar"/>
+    		</div>
+    		<div class="col-sm-2 col-md-2 col-lg-2">
+    			<input id="btnCerrar" type="button" class="btn btn-danger btn-block" value="Cerrar Session"/>
+    		</div>    		
+    	</div>
+    	
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
@@ -309,5 +319,7 @@
 			</div>
 		</div>
 	</div>
+	
+	<script src="js/pAdmin.js"></script>
 </body>
 </html>                                		                            

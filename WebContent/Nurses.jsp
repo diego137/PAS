@@ -35,7 +35,7 @@
     			<input id="btnCerrar" type="button" class="btn btn-danger btn-block" value="Cerrar Session"/>
     		</div>    		
     	</div>
-    
+    	
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
@@ -79,8 +79,7 @@
 							<td><%=datos.getString("curpPaciente") %></td>
 							
 							<td>	
-				                <a href=<%="ConexionServlet?id="+datos.getInt("idPaciente")%> class="show"><i class="material-icons" data-toggle="tooltip" title="Show">visibility</i></a>
-				                <a href=<%="createConsulta.jsp?id="+datos.getInt("idPaciente") %> class="add"><i class="material-icons" data-toggle="tooltip" title="Add">add_circle</i></a>
+				                <a href=<%="ConsultasNurse?id="+datos.getInt("idPaciente")%> class="show"><i class="material-icons" data-toggle="tooltip" title="Show">visibility</i></a>
 			                </td>
 		                </tr>
                 	</tbody>		

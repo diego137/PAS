@@ -14,6 +14,12 @@
     <div id="bg">
         <div id="bg-color">
             <div class="content">
+            	<div class="row">
+		    		<div class="col-sm-10 col-md-10 col-lg-10"></div>
+		    		<div class="col-sm-2 col-md-2 col-lg-2">
+		    			<input id="btnCerrar" type="button" class="btn btn-danger btn-block" value="Cerrar Session"/>
+		    		</div>    		
+		    	</div>
                 <div class="container-fluid">
                     <div class="row">
                         <div id="izquierda" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
@@ -56,5 +62,6 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/consulta.js"></script>
+    <script src="js/pAdmin.js"></script>
 </body>
 </html>

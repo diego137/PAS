@@ -43,9 +43,9 @@ function SonIguales(){
 					if(esto.indexOf("DOCTOR")>-1){
 					location.href="Doctores.jsp";
 					}else if(esto.indexOf("NURSE")>-1){
-						location.href="PrincipalNurse.jsp";
+						location.href="Nurses.jsp";
 					}else{
-						location.href="AdminEmployee.jsp";
+						location.href="PrincipalAdmistrador.jsp";
 					}
 					
 				}

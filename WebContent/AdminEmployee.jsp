@@ -319,7 +319,5 @@
 			</div>
 		</div>
 	</div>
-	
-	<script src="js/pAdmin.js"></script>
 </body>
 </html>                                		                            

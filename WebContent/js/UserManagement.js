@@ -12,6 +12,11 @@ document.getElementById('txtNombreM').addEventListener("input",hacer);
 document.getElementById('txtApellidosM').addEventListener("input",hacer);
 document.getElementById('btnDeleteRecords').addEventListener("click",eliminarMuchos);
 document.getElementById('btnRegresar').addEventListener("click",regresar);
+document.getElementById("btnCerrar").addEventListener("click",cerrarSesion);
+
+function cerrarSesion(){
+	location.href="index.jsp"
+}
 
 function regresar(){
 	location.href="PrincipalAdmistrador.jsp";
@@ -35,7 +40,7 @@ function eliminarMuchos(){
 		
 		miFormita.append("cajas",checkArray);
 		
-		xhr.open("POST","DeleteCheckBoxPatientsServlet",true);
+		xhr.open("POST","DeleteCheckBoxServlet",true);
 		
 		xhr.onload=()=>{
 			console.log(xhr.response);

@@ -28,7 +28,7 @@ public class SearchPatientsServlet extends HttpServlet {
 			out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>");
 			out.println("<script>");
 			out.println("$(document).ready(function(){");
-			out.println("Swal({ title: 'Can not let input in lank', confirmButtonText: 'Ok', onAfterClose: () => { setTimeout(() => location.href = 'AdminEmployee.jsp', 100);}});});");
+			out.println("Swal({ title: 'Can not let input in lank', confirmButtonText: 'Ok', onAfterClose: () => { setTimeout(() => location.href = 'AdminPatient.jsp.jsp', 100);}});});");
 		   out.println("</script>");}
 		int idPaciente = Integer.parseInt(request.getParameter("txtBusqueda"));
 		if(idPaciente<0)
@@ -37,7 +37,7 @@ public class SearchPatientsServlet extends HttpServlet {
 			out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>");
 			out.println("<script>");
 			out.println("$(document).ready(function(){");
-			out.println("Swal({ type:'error',title: 'Please type',text: 'onlye positive numbers', onAfterClose: () => { setTimeout(() => location.href = 'AdminEmployee.jsp', 100);}});});");
+			out.println("Swal({ type:'error',title: 'Please type',text: 'onlye positive numbers', onAfterClose: () => { setTimeout(() => location.href = 'AdminPatient.jsp', 100);}});});");
 		   out.println("</script>");}
 		
 	else {
@@ -78,7 +78,7 @@ public class SearchPatientsServlet extends HttpServlet {
 		out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>");
 		out.println("<script>");
 		out.println("$(document).ready(function(){");
-		out.println("Swal({ type:'error',title: 'Oops...',text: 'ID not found!', onAfterClose: () => { setTimeout(() => location.href = 'AdminEmployee.jsp', 100);}});});");
+		out.println("Swal({ type:'error',title: 'Oops...',text: 'ID not found!', onAfterClose: () => { setTimeout(() => location.href = 'AdminPatient.jsp', 100);}});});");
 	   out.println("</script>");
 			miExcepcioncita.printStackTrace();
 		} 

@@ -133,18 +133,19 @@
 				<td><%=datos.getString("Contrasena") %></td>
 				<td><%=datos.getString("Rol") %></td>		
 				<td>
-					<%int idUsuario = datos.getInt("idEmpleados"); %>
+					<%int idUsuario = datos.getInt("idEmpleados");
+					  String data = datos.getInt("idEmpleados")+"@"+
+					  				datos.getString("Nombre")+"@"+
+					  				datos.getString("Apellidos")+"@"+
+					  				datos.getString("Curp")+"@"+
+					  				datos.getString("Rol");
+					  data = data.replace(" ","#");%>
 					<!-- Lapiz -->
-                   <a href="#editEmployeeModal" class="edit" data-toggle="modal" data-whatever=
-                   <%=                   datos.getInt("idEmpleados")+"@"
-                   						+datos.getString("Nombre")+"@"
-                   						+datos.getString("Apellidos")+"@"
-					                   +datos.getString("Curp")+"@"
-					                   +datos.getString("Rol")%>
-                   >
+					
+                   <a href="#editEmployeeModal" class="edit" data-toggle="modal" data-whatever=<%= data %>>
                    <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
                    </a>
-                   <!-- <a href=<%="SearchEmployeeServlet?txtBusqueda="+datos.getInt("idEmpleados")%> class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>-->
+                   
                    <a onclick="return confirm('Are you sure?')" href=<%="/PAS/DeleteEmployeeServlet?idEmpleados="+idUsuario%>  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                </td>
                     </tr>
@@ -169,13 +170,15 @@
 		<td><%=request.getAttribute("txtContrasena") %></td>
 		<td><%=request.getAttribute("txtRol") %></td>
 		
+		<%String data = datos.getInt("idEmpleados")+"@"+
+  				datos.getString("Nombre")+"@"+
+  				datos.getString("Apellidos")+"@"+
+  				datos.getString("Curp")+"@"+
+  				datos.getString("Rol");
+  			data = data.replace(" ","#"); %>
+		
 		<td>
-		<a href="#editEmployeeModal" class="edit" data-toggle="modal" data-whatever=
-		                   <%=                  datos.getInt("idEmpleados")+"@"
-		                   						+datos.getString("Nombre")+"@"
-		                   						+datos.getString("Apellidos")+"@"
-							                    +datos.getString("Curp")+"@"
-							                    +datos.getString("Rol")%>
+		<a href="#editEmployeeModal" class="edit" data-toggle="modal" data-whatever=<%=data%>
 		                 	>
 		                   <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
 		                   </a>           

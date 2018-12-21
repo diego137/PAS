@@ -133,17 +133,18 @@
 				<td><%=datos.getString("contrasenaPaciente") %></td>
 					
 				<td>
-					<%int idUsuario = datos.getInt("idPaciente"); %>
+					<%int idUsuario = datos.getInt("idPaciente");
+						String data = datos.getInt("idPaciente")+"@"+
+				  				datos.getString("nombrePaciente")+"@"+
+				  				datos.getString("apellidosPaciente")+"@"+
+				  				datos.getString("curpPaciente");
+					  data = data.replace(" ","#");%>
 					<!-- Lapiz -->
-                   <a href="#editEmployeeModal" class="edit" data-toggle="modal" data-whatever=
-                   <%=                   datos.getInt("idPaciente")+"@"
-                   						+datos.getString("nombrePaciente")+"@"
-                   						+datos.getString("apellidosPaciente")+"@"
-					                   +datos.getString("curpPaciente")%>
+                   <a href="#editEmployeeModal" class="edit" data-toggle="modal" data-whatever=<%=data%>
                    >
                    <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
                    </a>
-                   <!-- <a href=<%="SearchPatientsServlet?txtBusqueda="+datos.getInt("idPaciente")%> class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>-->
+                   
                    <a onclick="return confirm('Are you sure?')" href=<%="/PAS/DeletePatientsServlet?idPaciente="+idUsuario%>  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                </td>
                     </tr>
@@ -167,9 +168,16 @@
 		<td><%=request.getAttribute("txtUsuario") %></td>
 		<td><%=request.getAttribute("txtContrasena") %></td>
 		
-		
+		<%String data = datos.getInt("idPaciente")+"@"+
+  				datos.getString("nombrePaciente")+"@"+
+  				datos.getString("apellidosPaciente")+"@"+
+  				datos.getString("curpPaciente");
+	  data = data.replace(" ","#"); %>
 		<td>
-           <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+            <a href="#editEmployeeModal" class="edit" data-toggle="modal" data-whatever=<%=data%>
+                   >
+                   <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                   </a>
            
            <a href=<%="/PAS/DeletePatientsServlet?idPaciente="+ datos.getInt("idPaciente")%> onclick="return confirm('Are you sure?')"class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
            

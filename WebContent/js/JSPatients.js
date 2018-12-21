@@ -171,6 +171,12 @@ function CrearPaciente()
 		  var recipient = button.data('whatever')// Extract info from data-* attributes
 		  
 		  //Separar campos obtenidos
+		  for(var i = 0; i < recipient.length; i++){
+			  if(recipient.charAt(i)=="#"){
+				  recipient = recipient.replace("#"," ");
+			  }
+		  }
+		  
 		  var arreglo = recipient.split("@");
 		   
 		  //console.log(arreglo)//Visualizar que envia
